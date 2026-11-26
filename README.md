@@ -21,7 +21,7 @@ holds the shared tooling: validation, packaging, the evaluation harness and the 
 | [gof-design-patterns](skills/gof-design-patterns/SKILL.md) | 6 files | Orchestrates Gang of Four design pattern implementations across 8 languages. |
 | [grill-me](skills/grill-me/SKILL.md) | none | Interview the user one decision at a time down a dependency-ordered decision tree, asking exactly one… |
 | [kiss-principle](skills/kiss-principle/SKILL.md) | 3 files | Apply the KISS principle to reduce unnecessary complexity. |
-| [root-cause-analysis](skills/root-cause-analysis/SKILL.md) | 4 files | Conducts systematic root cause analysis using proven methodologies including Toyota's 5 Whys, Ishikawa… |
+| [root-cause-analysis](skills/root-cause-analysis/SKILL.md) | 4 files | Structured root cause analysis using named methodologies: Toyota's 5 Whys, Ishikawa fishbone, Pareto analysis… |
 | [tdd-guru](skills/tdd-guru/SKILL.md) | 3 files | Enforces current Test-Driven Development (TDD) best practices across programming languages and scripts… |
 | [twelve-factor-app](skills/twelve-factor-app/SKILL.md) | 7 files | Applies the Twelve-Factor App methodology when designing, building, reviewing, or auditing cloud-native and… |
 

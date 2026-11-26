@@ -1,9 +1,9 @@
 ---
 name: root-cause-analysis
-description: Conducts systematic root cause analysis using proven methodologies including Toyota's 5 Whys, Ishikawa fishbone diagrams, Pareto analysis, and fault tree analysis. Use when investigating bugs, debugging code, troubleshooting systems, diagnosing equipment failures, analysing life problems, or identifying underlying causes of any issue across software engineering, hardware maintenance, process failures, or personal challenges.
+description: "Structured root cause analysis using named methodologies: Toyota's 5 Whys, Ishikawa fishbone, Pareto analysis and fault tree analysis. Use when asked for \"the root cause\", \"why does this keep happening\", \"5 whys\", \"a fishbone\", \"a post-mortem\" or \"an incident analysis\"; when a problem has recurred after being fixed once already; or when a symptom has several candidate causes that need separating systematically. Applies across software, hardware, process failures and personal problems. Do NOT use for ordinary debugging where the cause is findable by reading the code or the logs. That is normal work, and a 5 Whys on a typo wastes everyone's time."
 license: Apache-2.0
 metadata:
-  version: "2.0"
+  version: "2.1"
   source: Toyota Production System, plus standard quality-engineering methodologies
   author: Taiichi Ohno (5 Whys), Kaoru Ishikawa (fishbone diagrams)
   attribution: Methodologies restated with original worked examples.
