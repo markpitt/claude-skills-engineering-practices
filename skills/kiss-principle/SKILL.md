@@ -1,13 +1,13 @@
 ---
 name: kiss-principle
-description: Apply the KISS principle to reduce unnecessary complexity. Use ONLY when the user explicitly mentions "KISS", "simplify", "over-engineered", "too complex", or asks to review code/design specifically for unnecessary complexity. Do NOT trigger for general coding tasks, feature work, or architecture discussions unless simplicity is the named concern.
+description: Reviews code or a design for complexity it does not need, and says what to remove, what to keep and why. Use when the user names simplicity as the concern, for example "KISS", "simplify this", "this feels over-engineered", "too complex" or "can this be done more simply", or asks for a review aimed at unnecessary complexity. Do NOT use for general coding tasks, feature work or architecture discussions where simplicity is not the named concern.
 license: Apache-2.0
 metadata:
-  version: "2.0"
+  version: "2.1.0"
   tags: "simplicity, architecture, refactoring, maintainability"
 ---
 
-# K.I.S.S Principle
+# KISS principle
 
 **Goal:** Solve the problem with the minimum necessary complexity while preserving correctness and user value.
 
@@ -22,7 +22,7 @@ only when the situation in the left column actually applies.
 
 ## Complexity red flags
 
-- Can't explain it in 2–3 sentences
+- Cannot be explained in two or three sentences
 - Deeply nested conditionals (>3 levels)
 - Multiple abstractions stacked on each other
 - Many interdependencies and side effects
@@ -48,7 +48,7 @@ only when the situation in the left column actually applies.
 
 ## Quick check (5 questions)
 
-1. Can you explain this in 2 sentences?
+1. Can you explain this in two sentences?
 2. What is the simplest version that still works?
 3. What complexity is essential vs optional?
 4. Can you remove one component without breaking anything?

@@ -5,7 +5,7 @@
 Interview the user one decision at a time down a dependency-ordered decision tree, asking exactly one question per turn with a recommended option, exploring the codebase before asking, and finish with a decision record. Use when the user says "grill me", asks to be interviewed or stress-tested on a plan, design or task, or has a set of open decisions to settle before work starts. Do NOT use for a single question, for open-ended brainstorming, or when the user has already decided and wants the work done.
 
 - **Entry point:** [SKILL.md](SKILL.md)
-- **Version:** 1.1
+- **Version:** 1.1.0
 - **Licence:** Apache-2.0, see [LICENSE](LICENSE)
 
 ## Install
@@ -23,4 +23,4 @@ Settings, Capabilities, Skills. Released builds attach a ready-made zip.
 ## Part of a larger set
 
 One of the Engineering practices skills (`claude-skills-engineering-practices`). See the [group's list](../../README.md),
-or every group in [claude-skills](https://github.com/markpitt/claude-skills).
+or every group in [claude-skills](https://markpitt.dev/claude-skills/).

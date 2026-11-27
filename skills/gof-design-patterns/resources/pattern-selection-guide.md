@@ -14,18 +14,18 @@ This guide provides a decision tree and reference table to help you select the m
 | Adapt incompatible interfaces | **Adapter** | Structural | Legacy integration, third-party libraries |
 | Decouple abstraction from implementation | **Bridge** | Structural | OS-specific code, rendering engines |
 | Part-whole hierarchies (trees) | **Composite** | Structural | File systems, UI, organizational charts |
-| Add behavior dynamically | **Decorator** | Structural | Wrapping objects, middleware, streams |
-| Simplify complex subsystem | **Facade** | Structural | Framework initialization, simplified APIs |
-| Share many fine-grained objects | **Flyweight** | Structural | Large object counts, memory optimization |
+| Add behaviour dynamically | **Decorator** | Structural | Wrapping objects, middleware, streams |
+| Simplify complex subsystem | **Facade** | Structural | Framework initialisation, simplified APIs |
+| Share many fine-grained objects | **Flyweight** | Structural | Large object counts, memory optimisation |
 | Control access to objects | **Proxy** | Structural | Lazy loading, remote objects, access control |
 | Pass request through handlers | **Chain of Responsibility** | Behavioral | Event handling, logging, approval workflows |
 | Encapsulate actions as objects | **Command** | Behavioral | Undo/redo, queuing, remote invocation |
 | Parse custom languages/grammars | **Interpreter** | Behavioral | Expression evaluation, DSLs, query builders |
 | Traverse collections uniformly | **Iterator** | Behavioral | Collection access, tree/graph traversal |
-| Centralize complex interactions | **Mediator** | Behavioral | Dialog coordination, event buses |
+| Centralise complex interactions | **Mediator** | Behavioral | Dialog coordination, event buses |
 | Capture and restore state | **Memento** | Behavioral | Undo/redo, savepoints, transactions |
 | Notify many objects of changes | **Observer** | Behavioral | Event systems, reactive programming, data binding |
-| Object behavior varies by state | **State** | Behavioral | TCP states, order workflows, game states |
+| Object behaviour varies by state | **State** | Behavioral | TCP states, order workflows, game states |
 | Interchangeable algorithms | **Strategy** | Behavioral | Sorting, compression, validation algorithms |
 | Vary algorithm steps | **Template Method** | Behavioral | Framework hooks, lifecycle methods |
 | Add operations to object structures | **Visitor** | Behavioral | Compilers, reporting, transformations |
@@ -180,7 +180,7 @@ Do you want to ADD OPERATIONS to an object structure?
 |---------|---------|---------|
 | Single game manager | Singleton | GameManager |
 | Creating game objects | Factory Method | EnemyFactory |
-| Game entity behaviors | Strategy | MovementStrategy (patrol, chase, flee) |
+| Game entity behaviours | Strategy | MovementStrategy (patrol, chase, flee) |
 | Character states | State | CharacterState (idle, running, jumping) |
 | UI element hierarchy | Composite | UIPanel (contains other panels and buttons) |
 | Particle effects composition | Decorator | ParticleEffect (base + AdditiveBlend + Rotation) |
@@ -217,7 +217,7 @@ Do you want to ADD OPERATIONS to an object structure?
 |---------|---------|---------|
 | Single entry point | Facade | SystemAPI |
 | Platform-specific implementation | Bridge | GraphicsDriver (Windows, Mac, Linux) |
-| Centralized object creation | Factory Method | ServiceFactory |
+| Centralised object creation | Factory Method | ServiceFactory |
 | Permission-based access | Proxy | SecureDocumentProxy |
 | Feature toggling | Decorator | FeatureDecorator |
 | Caching layer | Proxy | CacheProxy |
@@ -234,14 +234,14 @@ Many problems benefit from using multiple patterns together:
 3. **Abstract Factory + Singleton**: Singleton factory instances for product families
 
 ### Complex State Management
-1. **State + Strategy**: State pattern for transitions, strategy for behavior variation
+1. **State + Strategy**: State pattern for transitions, strategy for behaviour variation
 2. **Memento + Command**: Commands store mementos for undo/redo
 3. **State + Composite**: States for multi-level state machines
 
 ### Flexible System Architecture
 1. **Facade + Singleton**: Single facade instance for subsystem access
 2. **Bridge + Strategy**: Separate implementation hierarchy with algorithmic variation
-3. **Proxy + Decorator**: Proxy for access control, decorator for behavior addition
+3. **Proxy + Decorator**: Proxy for access control, decorator for behaviour addition
 
 ### Event-Driven Systems
 1. **Observer + Mediator**: Mediator uses observer to notify colleagues
@@ -264,7 +264,7 @@ Many problems benefit from using multiple patterns together:
 
 ### Premature Abstraction
 - **Problem**: Applying patterns before they're needed
-- **Solution**: Refactor toward patterns when need arises (YAGNI principle)
+- **Solution**: Refactor towards patterns when need arises (YAGNI principle)
 
 ### Over-Engineering
 - **Problem**: Using complex patterns for simple problems
@@ -289,7 +289,7 @@ Many problems benefit from using multiple patterns together:
 ### Idiomatic Patterns by Language
 
 **Python**
-- Leverage metaclasses (Singleton, ABCs)
+- Use metaclasses (Singleton, ABCs)
 - Use decorators naturally (@decorator syntax)
 - Duck typing reduces need for many structural patterns
 - Generators for Iterator pattern
@@ -333,7 +333,7 @@ If you're new to design patterns, learn them in this order:
 1. **Factory Method** - Simple pattern, widely used, easy to understand
 2. **Observer** - Fundamental to event-driven systems
 3. **Decorator** - Teaches composition over inheritance
-4. **Strategy** - Teaches parameterizing behavior
+4. **Strategy** - Teaches parameterising behaviour
 5. **Template Method** - Teaches skeletal structure
 6. **Singleton** - Common but use carefully
 7. **Adapter** - Essential for integration
@@ -352,7 +352,7 @@ If you're new to design patterns, learn them in this order:
 20. **Visitor** - For operation addition
 21. **Prototype** - For cloning
 22. **Abstract Factory** - Complex factory variant
-23. **Flyweight** - Memory optimization pattern
+23. **Flyweight** - Memory optimisation pattern
 
 ---
 

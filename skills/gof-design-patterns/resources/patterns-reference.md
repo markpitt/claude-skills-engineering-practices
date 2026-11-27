@@ -18,7 +18,7 @@ Creational patterns abstract the instantiation process, making systems independe
 
 ### 1. Singleton
 
-**Intent**: Ensure a class has only one instance and provide a global point of access to it.
+**Intent**: Make sure a class has only one instance and provide a global point of access to it.
 
 **Problem**: You need exactly one instance of a class, and it must be accessible from a well-known access point.
 
@@ -40,8 +40,8 @@ Creational patterns abstract the instantiation process, making systems independe
 - Testing requires multiple instances or mocking
 
 **Common Implementations**:
-- Lazy initialization (create on first access)
-- Eager initialization (create at program start)
+- Lazy initialisation (create on first access)
+- Eager initialisation (create at program start)
 - Thread-safe variants (double-checked locking, locks)
 - Registry-based (multiple named instances)
 
@@ -65,7 +65,7 @@ Creational patterns abstract the instantiation process, making systems independe
 - A class can't anticipate the class of objects to create
 - A class wants subclasses to specify objects to create
 - Classes delegate responsibility to helper subclasses
-- You want to localize knowledge of which class gets created
+- You want to localise knowledge of which class gets created
 
 **Avoid When**:
 - Product types don't share a common interface
@@ -379,14 +379,14 @@ Structural patterns explain how to assemble objects and classes into larger stru
 
 **Types**:
 - **Remote Proxy**: represents object in different address space
-- **Virtual Proxy**: creates expensive objects on demand (lazy initialization)
+- **Virtual Proxy**: creates expensive objects on demand (lazy initialisation)
 - **Protection Proxy**: controls access based on permissions
 - **Smart Reference**: performs additional actions when object is accessed (reference counting, locking, loading on first access)
 - **Cache Proxy**: caches results of expensive operations
 - **Logging Proxy**: logs requests before forwarding
 
 **Use When**:
-- You need lazy initialization (virtual proxy)
+- You need lazy initialisation (virtual proxy)
 - You need access control (protection proxy)
 - You need to reference remote object locally (remote proxy)
 - You need to add functionality before/after object access
@@ -446,9 +446,9 @@ Behavioral patterns are concerned with algorithms and the assignment of responsi
 
 ### 14. Command
 
-**Intent**: Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
+**Intent**: Encapsulate a request as an object, thereby letting you parameterise clients with different requests, queue or log requests, and support undoable operations.
 
-**Problem**: You want to parameterize objects with operations, queue operations, log operations, or support undo.
+**Problem**: You want to parameterise objects with operations, queue operations, log operations, or support undo.
 
 **Solution**: Encapsulate requests as objects. A command object contains all information needed to perform an action or trigger an event.
 
@@ -460,7 +460,7 @@ Behavioral patterns are concerned with algorithms and the assignment of responsi
 - Client (creates ConcreteCommand and sets Receiver)
 
 **Use When**:
-- You want to parameterize objects with an action to perform
+- You want to parameterise objects with an action to perform
 - You want to specify, queue, and execute requests at different times
 - You want to support undo/redo
 - You want to support logging changes for crash recovery
@@ -556,17 +556,17 @@ Most modern languages provide built-in iterator support (Python generators, Java
 
 **Problem**: Objects need to communicate but direct connections create tight coupling and complexity.
 
-**Solution**: Centralize complex communications and control between related objects in a mediator object.
+**Solution**: Centralise complex communications and control between related objects in a mediator object.
 
 **Structure**:
 - Mediator (interface for communicating with Colleague objects)
-- ConcreteMediator (implements cooperative behavior, knows and maintains colleagues)
+- ConcreteMediator (implements cooperative behaviour, knows and maintains colleagues)
 - Colleague (each Colleague knows its Mediator, communicates via it)
 
 **Use When**:
 - Set of objects communicate in well-defined but complex ways
 - Reusing object is difficult due to dependencies on many others
-- Behavior distributed between classes should be customizable without subclassing
+- Behaviour distributed between classes should be customisable without subclassing
 - You want to reduce coupling between components
 
 **Avoid When**:
@@ -670,21 +670,21 @@ Most modern languages provide built-in iterator support (Python generators, Java
 
 ### 20. State
 
-**Intent**: Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
+**Intent**: Allow an object to alter its behaviour when its internal state changes. The object will appear to change its class.
 
-**Problem**: An object's behavior depends on its state, and it must change behavior at runtime depending on state.
+**Problem**: An object's behaviour depends on its state, and it must change behaviour at runtime depending on state.
 
-**Solution**: Create state objects for each possible state. Delegate state-specific behavior to the current state object.
+**Solution**: Create state objects for each possible state. Delegate state-specific behaviour to the current state object.
 
 **Structure**:
 - Context (maintains current state, delegates requests to state object)
-- State (interface for encapsulating behavior associated with state)
-- ConcreteState (each implements behavior for a particular state)
+- State (interface for encapsulating behaviour associated with state)
+- ConcreteState (each implements behaviour for a particular state)
 
 **Use When**:
-- Object behavior depends on state and must change at runtime
+- Object behaviour depends on state and must change at runtime
 - Operations have large conditional statements dependent on state
-- State-specific behavior should be independently defined
+- State-specific behaviour should be independently defined
 - State transitions are well-defined
 
 **Avoid When**:
@@ -705,7 +705,7 @@ Most modern languages provide built-in iterator support (Python generators, Java
 - State creation (pre-created vs. on-demand)
 
 **State vs. Strategy**:
-- State: behavior varies with object's state, state objects may know about each other
+- State: behaviour varies with object's state, state objects may know about each other
 - Strategy: client chooses strategy, strategies are independent
 
 ---
@@ -724,10 +724,10 @@ Most modern languages provide built-in iterator support (Python generators, Java
 - Context (maintains reference to Strategy, uses Strategy interface)
 
 **Use When**:
-- Many related classes differ only in behavior
+- Many related classes differ only in behaviour
 - You need different variants of an algorithm
 - Algorithm uses data client shouldn't know about
-- Class defines many behaviors appearing as conditional statements
+- Class defines many behaviours appearing as conditional statements
 
 **Avoid When**:
 - Algorithms rarely change
@@ -744,7 +744,7 @@ Most modern languages provide built-in iterator support (Python generators, Java
 **Considerations**:
 - Strategy and Context communicate (context passes data or passes itself)
 - Strategy objects as flyweights (if stateless)
-- Optional strategy (default behavior if no strategy set)
+- Optional strategy (default behaviour if no strategy set)
 
 **Strategy vs. State**:
 - Strategy: client chooses algorithm, algorithms are independent
@@ -756,7 +756,7 @@ Most modern languages provide built-in iterator support (Python generators, Java
 
 **Intent**: Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps without changing the algorithm's structure.
 
-**Problem**: You want to implement the invariant parts of an algorithm once and let subclasses customize variable parts.
+**Problem**: You want to implement the invariant parts of an algorithm once and let subclasses customise variable parts.
 
 **Solution**: Define an abstract class with a template method that calls abstract/hook methods. Subclasses override these methods.
 
@@ -768,12 +768,12 @@ Most modern languages provide built-in iterator support (Python generators, Java
 
 **Primitive Operations**:
 - Abstract operations (must be implemented by subclasses)
-- Concrete operations (default behavior, may be overridden)
+- Concrete operations (default behaviour, may be overridden)
 - Hook operations (empty default, may be overridden)
 
 **Use When**:
 - You want to implement invariant parts of algorithm once
-- Common behavior among subclasses should be factored and centralized
+- Common behaviour among subclasses should be factored and centralised
 - You want to control which operations subclasses can extend
 - You want to avoid code duplication
 
@@ -783,13 +783,13 @@ Most modern languages provide built-in iterator support (Python generators, Java
 - Composition would be clearer (Strategy pattern)
 
 **Common Applications**:
-- Framework classes (extend to customize)
+- Framework classes (extend to customise)
 - Test frameworks (setUp, tearDown hooks)
 - Data processing pipelines (read, process, write)
-- Lifecycle methods (initialization, execution, cleanup)
+- Lifecycle methods (initialisation, execution, cleanup)
 
 **Considerations**:
-- Minimize primitive operations
+- Minimise primitive operations
 - Naming convention for hooks (doBeforeX, afterY)
 - Hollywood Principle: "Don't call us, we'll call you"
 
@@ -822,7 +822,7 @@ Most modern languages provide built-in iterator support (Python generators, Java
 - Operations are closely tied to element classes
 
 **Common Applications**:
-- Compilers (AST traversal for optimization, code generation, type checking)
+- Compilers (AST traversal for optimisation, code generation, type checking)
 - File system operations (calculate size, search, backup)
 - Export to different formats (XML, JSON, PDF)
 - Reporting and analytics
@@ -866,7 +866,7 @@ Most modern languages provide built-in iterator support (Python generators, Java
 
 - **Factory Method vs. Abstract Factory**: Factory Method is simpler, Abstract Factory for families
 - **Decorator vs. Proxy**: Decorator adds responsibilities, Proxy controls access
-- **Strategy vs. State**: Strategy chooses algorithm, State changes behavior with state
+- **Strategy vs. State**: Strategy chooses algorithm, State changes behaviour with state
 - **Template Method vs. Strategy**: Template Method uses inheritance, Strategy uses composition
 - **Visitor vs. Iterator**: Visitor performs operations, Iterator provides access
 
@@ -890,7 +890,7 @@ Most modern languages provide built-in iterator support (Python generators, Java
 
 ### Premature Abstraction
 - Applying patterns before they're needed
-- **Better**: Refactor toward patterns when need arises (YAGNI principle)
+- **Better**: Refactor towards patterns when need arises (YAGNI principle)
 
 ### Over-Engineering
 - Using complex patterns for simple problems
@@ -956,15 +956,15 @@ Most modern languages provide built-in iterator support (Python generators, Java
 - Share to reduce memory → Flyweight
 - Control access → Proxy
 
-**Do I need flexibility in object behavior?**
+**Do I need flexibility in object behaviour?**
 - Pass request through chain → Chain of Responsibility
 - Encapsulate requests → Command
 - Language/grammar interpretation → Interpreter
 - Access elements sequentially → Iterator
-- Centralize communication → Mediator
+- Centralise communication → Mediator
 - Save/restore state → Memento
 - Notify dependents of changes → Observer
-- Vary behavior by state → State
+- Vary behaviour by state → State
 - Interchangeable algorithms → Strategy
 - Vary algorithm steps → Template Method
 - Operations on object structure → Visitor

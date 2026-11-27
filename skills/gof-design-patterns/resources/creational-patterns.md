@@ -2,15 +2,15 @@
 
 Creational patterns abstract the instantiation process, making systems independent of how objects are created, composed, and represented. These patterns give you flexibility in **what** gets created, **who** creates it, **how** it gets created, and **when**.
 
-## 1. Singleton - Ensure Single Instance with Global Access
+## 1. Singleton - One Instance with Global Access
 
-**Intent**: Ensure a class has only one instance and provide a global point of access to it.
+**Intent**: Make sure a class has only one instance and provide a global point of access to it.
 
 **When to Use**:
 - Need exactly one instance of a class across the entire application
 - Instance must be accessible from multiple points without passing references
 - Instance is expensive to create (database connections, thread pools)
-- Lazy initialization is beneficial (create only when first needed)
+- Lazy initialisation is beneficial (create only when first needed)
 
 **When NOT to Use**:
 - Need multiple instances with different configurations
@@ -18,7 +18,7 @@ Creational patterns abstract the instantiation process, making systems independe
 - Testing requires multiple instances or easy mocking
 
 **Implementation Considerations**:
-- Lazy initialization vs. eager (thread-safe variants)
+- Lazy initialisation vs. eager (thread-safe variants)
 - Thread-safe access (double-checked locking, locks, atomic operations)
 - Language-specific: lazy_static in Rust, metaclass in Python, Lazy<T> in C#
 - Registry-based singleton (multiple named instances)
@@ -40,7 +40,7 @@ Creational patterns abstract the instantiation process, making systems independe
 - Class can't anticipate the type of objects it needs to create
 - Class wants subclasses to specify objects to create
 - Classes delegate responsibility to helper subclasses
-- Want to localize knowledge of which concrete classes are used
+- Want to localise knowledge of which concrete classes are used
 
 **When NOT to Use**:
 - Product types don't share a common interface
@@ -51,7 +51,7 @@ Creational patterns abstract the instantiation process, making systems independe
 - Abstract Creator class with abstract factory method
 - ConcreteCreator subclasses implement factory method
 - Clients work with abstract Product interface
-- Can use parameterized factory methods (string or enum selects type)
+- Can use parameterised factory methods (string or enum selects type)
 
 **Example Use Cases**:
 - Document editors (File > New creates specific document type)
@@ -86,7 +86,7 @@ Creational patterns abstract the instantiation process, making systems independe
 **Example Use Cases**:
 - UI framework (create family of Windows/Mac/Linux controls)
 - Database support (create SQL Server/PostgreSQL/Oracle adapters)
-- Theme engines (create coordinated colors, fonts, icons for theme)
+- Theme engines (create coordinated colours, fonts, icons for theme)
 - Device drivers (different implementations for Windows/Mac/Linux)
 
 ---
@@ -148,7 +148,7 @@ Creational patterns abstract the instantiation process, making systems independe
 
 **Example Use Cases**:
 - Cloning game objects (enemies, bullets with same configuration)
-- Document templates (clone, then customize)
+- Document templates (clone, then customise)
 - Complex configuration objects
 - Undo/redo (store clones as snapshots)
 - Object pooling (clone from pool, reset state)
@@ -167,9 +167,9 @@ Creational patterns abstract the instantiation process, making systems independe
 
 ### Language-Specific Notes
 
-**Rust**: Use traits for products, leverage ownership system for Singleton (Arc/Mutex), use enums for type-safe cloning.
+**Rust**: Use traits for products, use ownership system for Singleton (Arc/Mutex), use enums for type-safe cloning.
 
-**Python**: Use metaclass for Singleton, ABC for formal interfaces, leverage duck typing for Factory.
+**Python**: Use metaclass for Singleton, ABC for formal interfaces, use duck typing for Factory.
 
 **C#**: Use Lazy<T> for thread-safe Singleton, generics for type-safe patterns, properties for lazy initialization.
 

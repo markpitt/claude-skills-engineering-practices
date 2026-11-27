@@ -5,7 +5,7 @@
 Enforces current Test-Driven Development (TDD) best practices across programming languages and scripts, including red-green-refactor workflow, deterministic test design, test pyramid balance, and quality signals beyond coverage. Use when users ask about TDD workflow, test strategy, flaky test remediation, unit/integration/end-to-end balance, contract testing, or improving test effectiveness in CI. Do NOT use for unrelated non-testing prompts or language-only questions without testing intent.
 
 - **Entry point:** [SKILL.md](SKILL.md)
-- **Version:** 1.0.0
+- **Version:** 2.0.0
 - **Licence:** Apache-2.0, see [LICENSE](LICENSE)
 
 ## Install
@@ -31,4 +31,4 @@ Loaded on demand, not up front. SKILL.md routes to them.
 ## Part of a larger set
 
 One of the Engineering practices skills (`claude-skills-engineering-practices`). See the [group's list](../../README.md),
-or every group in [claude-skills](https://github.com/markpitt/claude-skills).
+or every group in [claude-skills](https://markpitt.dev/claude-skills/).

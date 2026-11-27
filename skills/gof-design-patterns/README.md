@@ -2,10 +2,10 @@
 
 # gof-design-patterns
 
-Orchestrates Gang of Four design pattern implementations across 8 languages. Analyses user problems to select optimal pattern(s) from creational, structural, and behavioural categories. Provides concrete, production-ready implementations with explanations and trade-offs.
+Chooses and implements the 23 Gang of Four design patterns (creational, structural and behavioural) in C#, Rust, Python, Dart, Go, GenAIScript, TypeScript and C, with the trade-offs and the simpler alternative where one exists. Use when the user asks which pattern fits a problem, wants a named pattern such as Strategy, Builder, Observer or Visitor implemented in a given language, asks how two patterns differ or combine, or is refactoring code towards or away from a pattern. Do NOT use for architecture styles such as microservices, CQRS or event sourcing, for framework-specific idioms with no pattern question, or for general code review.
 
 - **Entry point:** [SKILL.md](SKILL.md)
-- **Version:** 2.0
+- **Version:** 3.0.0
 - **Licence:** Apache-2.0, see [LICENSE](LICENSE)
 
 ## Install
@@ -34,4 +34,4 @@ Loaded on demand, not up front. SKILL.md routes to them.
 ## Part of a larger set
 
 One of the Engineering practices skills (`claude-skills-engineering-practices`). See the [group's list](../../README.md),
-or every group in [claude-skills](https://github.com/markpitt/claude-skills).
+or every group in [claude-skills](https://markpitt.dev/claude-skills/).

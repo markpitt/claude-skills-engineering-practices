@@ -1,6 +1,6 @@
 # Processes and Concurrency
 
-Covers **Factor VI: Processes**, **Factor VII: Port Binding**, and **Factor VIII: Concurrency** — how twelve-factor apps execute as stateless processes, self-host their own services, and scale horizontally.
+Covers **Factor VI: Processes**, **Factor VII: Port Binding**, and **Factor VIII: Concurrency**. How twelve-factor apps execute as stateless processes, self-host their own services, and scale horizontally.
 
 ---
 
@@ -10,7 +10,7 @@ Covers **Factor VI: Processes**, **Factor VII: Port Binding**, and **Factor VIII
 
 > Execute the app as one or more stateless processes.
 
-Twelve-factor processes are **stateless** and **share-nothing**. Any state that must persist is stored in a backing service (database, cache, object store) — never in the process's memory or local filesystem.
+Twelve-factor processes are **stateless** and **share-nothing**. Any state that must persist is stored in a backing service (database, cache, object store): never in the process's memory or local filesystem.
 
 ### Stateless vs. Stateful Processes
 

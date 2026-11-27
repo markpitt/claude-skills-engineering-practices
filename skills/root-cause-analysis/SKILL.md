@@ -1,172 +1,74 @@
 ---
 name: root-cause-analysis
-description: "Structured root cause analysis using named methodologies: Toyota's 5 Whys, Ishikawa fishbone, Pareto analysis and fault tree analysis. Use when asked for \"the root cause\", \"why does this keep happening\", \"5 whys\", \"a fishbone\", \"a post-mortem\" or \"an incident analysis\"; when a problem has recurred after being fixed once already; or when a symptom has several candidate causes that need separating systematically. Applies across software, hardware, process failures and personal problems. Do NOT use for ordinary debugging where the cause is findable by reading the code or the logs. That is normal work, and a 5 Whys on a typo wastes everyone's time."
+description: "Structured root cause analysis using named methods: Toyota's 5 Whys, Ishikawa fishbone, Pareto analysis, fault tree and barrier analysis. Use when asked for \"the root cause\", \"why does this keep happening\", \"5 whys\", \"a fishbone\", \"a post-mortem\" or \"an incident analysis\"; when a problem has come back after being fixed once already; or when a symptom has several candidate causes that need separating. Applies to software, hardware, process failures and practical problems such as missed deadlines or a habit that will not stick. Do NOT use for ordinary debugging where the cause can be found by reading the code or the logs, since a 5 Whys on a typo wastes everyone's time. Do NOT use for emotional, mental health or wellbeing support."
 license: Apache-2.0
 metadata:
-  version: "2.1"
-  source: Toyota Production System, plus standard quality-engineering methodologies
+  version: "3.0.0"
+  source: Toyota Production System, plus standard quality-engineering methods
   author: Taiichi Ohno (5 Whys), Kaoru Ishikawa (fishbone diagrams)
-  attribution: Methodologies restated with original worked examples.
+  attribution: Methods restated with original worked examples.
 ---
 
-# Root Cause Analysis Orchestration Skill
+# Root cause analysis
 
-This skill helps you systematically identify the root cause of any problem using proven methodologies from the Toyota Production System and other industry-standard techniques.
+The point of root cause analysis is to stop the problem coming back. Fixing the symptom makes today better; finding the cause makes next month better. Taiichi Ohno, who built the Toyota Production System, put the method in one line in *Toyota Production System: Beyond Large-Scale Production* (1988): "By repeating why five times, the nature of the problem as well as its solution becomes clear."
 
-## Quick Reference: When to Load Which Resource
+Five is a habit, not a rule. Stop when you reach a cause you can change and that, once changed, would have prevented the problem. Stop earlier if the chain has reached something outside anyone's control, such as the weather, and work back to the last cause you can act on.
 
-| Your Problem Type | Load Resource | Why |
+## Choosing a method
+
+| Situation | Method | Load |
 |---|---|---|
-| Need to understand 5 Whys, Fishbone, Pareto, Fault Tree methodology | `resources/rca-methodologies.md` | Learn each method step-by-step with examples |
-| Looking for common root causes in your domain | `resources/common-root-causes.md` | Pattern match against known causes: software, hardware, process, personal |
-| Want to see complete worked examples | `resources/example-analyses.md` | Study real cases: software bugs, vehicle maintenance, system failures, personal problems |
-| Advanced: need barrier analysis, complex cause mapping | `resources/advanced-techniques.md` | Formal methods: Fault Tree, Barrier Analysis, multi-methodology chains |
+| One clear failure, one likely chain | 5 Whys | `resources/rca-methodologies.md` |
+| Several plausible causes, scope unclear | Fishbone, then 5 Whys on the strongest branch | `resources/rca-methodologies.md` |
+| Many problems competing for attention | Pareto first, then 5 Whys on the top one or two | `resources/rca-methodologies.md` |
+| Safety-critical or high-stakes | Fault tree | `resources/advanced-techniques.md` |
+| A control or check that should have caught it did not | Barrier analysis | `resources/advanced-techniques.md` |
+| You suspect a familiar cause | Check the catalogue, then confirm with 5 Whys | `resources/common-root-causes.md` |
 
-## Core Principle
+`resources/example-analyses.md` has four worked examples: a JWT authentication bug, an overheating car, an e-commerce checkout failure, and a run of missed deadlines.
 
-**Do not treat symptoms. Find and fix the root cause.** As Taiichi Ohno, architect of the Toyota Production System, said: "By repeating why five times, the nature of the problem as well as its solution becomes clear."
+## Define the problem first
 
-## Orchestration Protocol
+Most bad analyses start with a vague problem statement. Before asking why, write down:
 
-### Phase 1: Problem Classification
+- **What** is observed, as a symptom, not a guessed cause.
+- **Where** it happens: which system, component or place.
+- **When**: when it started, how often, and any pattern.
+- **Impact**: who or what is affected, and how badly.
 
-Quickly identify your problem domain and complexity:
+For example: "Users in the EU region see 3 to 5 second dashboard load times between 09:00 and 11:00 UTC, affecting about 2,000 daily users. It started after the v2.4 deployment on 18 November."
 
-**Problem Domain:**
-- **Software**: Code bugs, system failures, performance, deployment
-- **Hardware**: Equipment, mechanical, electrical, maintenance
-- **Process**: Workflow, procedures, organisational, communication
-- **Personal**: Life challenges, productivity, habits, wellbeing
+## Evidence before answers
 
-**Complexity Level:**
-- **Simple**: Clear failure chain, 1-2 likely causes → Use 5 Whys
-- **Complex**: Multiple possible causes, unknown scope → Start with Fishbone
-- **Critical/Safety**: High stakes, needs rigor → Use Fault Tree
-- **Multiple Issues**: Many competing problems → Use Pareto first
+Go and see. Each "why" should be answered from evidence: logs, metrics, the timeline of changes, reproduction steps, the state of the system before and after. An answer that is a plausible story rather than an observed fact is a hypothesis, and should be labelled as one until something confirms it.
 
-**Action:** Load appropriate resource file(s) based on classification.
+The most useful single question is usually "what changed?" Deployments, configuration, dependencies, load, people and season all count.
 
-### Phase 2: Methodology Selection
+## Checking the cause
 
-Based on problem type, select your approach:
+A root cause should pass two tests:
 
-| Situation | Recommended | Load |
-|---|---|---|
-| **Single clear failure** | 5 Whys | rca-methodologies.md |
-| **Complex/multiple possibilities** | Fishbone → 5 Whys | rca-methodologies.md |
-| **Competing priorities** | Pareto → 5 Whys | rca-methodologies.md |
-| **Safety/high-stakes** | Fault Tree | advanced-techniques.md |
-| **Process breakdown** | Barrier Analysis | advanced-techniques.md |
-| **Pattern matching** | Common causes + 5 Whys | common-root-causes.md |
+- **Forward:** if this cause is present, does it produce the symptom? Can you reproduce it?
+- **Backward:** if you remove this cause, does the symptom stop, and would it have stopped this time?
 
-### Phase 3: Execution & Verification
+Then check it is something you can act on. "Human error" is almost never the root cause: ask why the system allowed the error, or why nothing caught it. `resources/common-root-causes.md` lists other red flags, and the verification section of `resources/advanced-techniques.md` covers testing a cause more formally.
 
-**During Analysis:**
-1. Define problem clearly (What/Where/When/Impact)
-2. Gather evidence systematically
-3. Apply selected methodology
-4. Document reasoning at each step
-5. Verify root cause with Forward/Backward tests
+## A quick pass
 
-**Before Finalising:**
-- Validate conclusion against evidence
-- Check for red flags (see common-root-causes.md)
-- Confirm actionability (can you fix this?)
-- Develop solutions addressing root cause
+For a small problem where a full analysis would be overkill:
 
-## Problem Definition Framework
+1. Write the problem statement.
+2. Ask why, and answer from evidence. Repeat until the answer is something you can change. That is often three or four rounds, sometimes five or more.
+3. Run the forward and backward tests on that answer.
+4. Fix it, and say what would show the fix worked.
 
-Create a clear problem statement before analysis:
+## What to hand back
 
-**Essential Elements:**
-- **What:** Observable symptom (not assumed cause)
-- **Where:** Location/system/component affected
-- **When:** Timeline, frequency, pattern
-- **Impact:** Users/systems affected, severity
+- The problem statement.
+- The chain of reasoning, with the evidence for each step and anything still unconfirmed marked as such.
+- The root cause, and how it passed the forward and backward tests.
+- Actions that address the cause, with an owner where there is one, and any containment needed while the real fix lands.
+- What would show the fix worked, and when to check.
 
-**Example:**
-"Users in EU region experience 3-5 second dashboard load delays during 9-11 AM UTC peak hours, affecting ~2,000 daily active users. Started after v2.4 deployment on Nov 18th."
-
-## Evidence Gathering (Go and See)
-
-Follow Toyota's principle: collect facts, not opinions.
-
-**Key Evidence Sources:**
-- Logs, metrics, monitoring data
-- Timeline of events and changes
-- System/code/configuration changes before problem
-- Environmental factors (load, traffic, season)
-- User reports and reproduction steps
-- System state before/during/after
-
-## RCA Methodologies
-
-See `resources/rca-methodologies.md` for complete methodology guide.
-
-## Resource Files Summary
-
-### `resources/rca-methodologies.md`
-Methodology guide covering:
-- **5 Whys**: Step-by-step process with software examples
-- **Fishbone Diagram**: Structure, 6 M's categories, process
-- **Pareto Analysis**: Prioritisation using 80/20 rule
-- **Fault Tree Analysis**: Top-down formal analysis
-- **Barrier Analysis**: Control failure examination
-- Structured 6-phase RCA process, domain-specific guidance, templates
-
-### `resources/common-root-causes.md`
-Pattern reference catalogue by domain:
-- **Software Engineering**: Code defects, configuration, dependencies, deployment
-- **Hardware & Equipment**: Mechanical, electrical, operational, maintenance
-- **Process & Operations**: Workflow, design, resources
-- **Personal/Life**: Health, habits, environment, skills
-- Red flags, recurring themes, pattern recognition
-
-### `resources/example-analyses.md`
-Four worked examples with full analysis:
-1. **Software Bug**: JWT authentication (5 Whys)
-2. **Vehicle Maintenance**: Overheating (5 Whys)
-3. **System Failure**: E-commerce checkout (Fishbone + 5 Whys)
-4. **Personal Productivity**: Missed deadlines (Fishbone + 5 Whys)
-
-### `resources/advanced-techniques.md`
-Formal methods for complex problems:
-- **Fault Tree Analysis**: Boolean logic, safety systems
-- **Barrier Analysis**: Control failures
-- **Multi-Methodology Chains**: Complex orchestration
-- **Verification Frameworks**: Full testing
-
-## How This Skill Works
-
-1. **Clarify your situation**: Domain, observations, evidence, time
-2. **Recommend approach**: Complexity analysis, methodology, resources
-3. **Guide through analysis**: Problem statement, evidence, methodology, verification
-4. **Deliver output**: Analysis, root cause, solutions, implementation
-
-## Quick Start: 5-Minute RCA
-
-1. State problem (What/Where/When/Impact)
-2. First Why: fact-based answer
-3. Second Why: dig deeper
-4. Third Why: dig deeper again
-5. Verify: would fixing this prevent it?
-
-## Templates & Examples
-
-- **5 Whys Template** in `resources/rca-methodologies.md`
-- **Fishbone Template** in `resources/rca-methodologies.md`
-- **Worked Examples** in `resources/example-analyses.md`
-- **Solution Structures** in `resources/example-analyses.md`
-
-## Next Steps
-
-1. Identify problem domain (software/hardware/process/personal)
-2. Load appropriate resource from table above
-3. Select methodology based on complexity
-4. Follow step-by-step process in resource
-5. Verify root cause (Forward/Backward tests)
-6. Develop actionable solutions
-
----
-
-**Remember**: Goal is systematic investigation, disciplined questioning until you reach a cause you can actually fix.
+For incidents with several people involved, keep the write-up blameless: describe what the system allowed, not who slipped. `resources/advanced-techniques.md` has the post-mortem structure.

@@ -46,7 +46,7 @@ verify each claim.
     - <https://abseil.io/resources/swe-book/html/ch11.html>
     - <https://abseil.io/resources/swe-book/html/ch12.html>
 
-## Behavior vs Implementation Coupling
+## Behaviour vs Implementation Coupling
 
 - **Prefer behavior/state verification over brittle interaction coupling by default**
   - Sources: Fowler `Mocks Aren't Stubs`; Google SWE Book ch12
@@ -89,7 +89,7 @@ verify each claim.
 
 ## Framework/Tooling Recency Checks
 
-- **JUnit current docs now centered at docs.junit.org (current user guide)**
+- **JUnit current docs now centred at docs.junit.org (current user guide)**
   - Source: JUnit docs redirect/current page
   - URL: <https://docs.junit.org/current/user-guide/>
 

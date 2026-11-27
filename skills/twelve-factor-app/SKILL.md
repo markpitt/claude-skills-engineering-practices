@@ -1,17 +1,19 @@
 ---
 name: twelve-factor-app
-description: 'Applies the Twelve-Factor App methodology when designing, building, reviewing, or auditing cloud-native and SaaS applications. Use when asked about 12-factor compliance, app architecture for cloud platforms, environment configuration, stateless processes, deployment pipelines, service design, or scaling strategies. Covers all 12 factors: codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, and admin processes.'
+description: 'Applies the Twelve-Factor App methodology when designing, building, reviewing or auditing cloud-native and SaaS applications. Use when asked about 12-factor compliance, configuration in the environment, stateless processes, build, release and run separation, backing services, port binding, scaling by process, graceful shutdown, dev and prod parity, logs as event streams, or one-off admin tasks. Do NOT use for choosing a cloud provider, writing Kubernetes or Terraform manifests with no 12-factor question, or general code review.'
 license: Apache-2.0
 metadata:
   source: https://12factor.net/
   author: Adam Wiggins
-  version: 1.0.0
+  version: 1.1.0
   tags: [architecture, cloud-native, saas, devops, best-practices]
 ---
 
 # Twelve-Factor App
 
-A methodology for building portable, resilient, and scalable software-as-a-service applications. Originally codified by the Heroku team and applicable to apps written in any programming language using any backing service combination.
+Twelve rules for building services that deploy cleanly to any platform and scale by adding processes. Adam Wiggins and the Heroku team wrote them in 2011. Since November 2024 the text at 12factor.net has been an open-source community project, and the maintainers are revising it, so check the site when a factor's current wording matters.
+
+The factors apply in any language and with any mix of backing services. They are a checklist of failure modes more than a design method: each one names a way an app becomes hard to deploy, scale or debug.
 
 ## When to Load Which Resource
 
@@ -42,11 +44,11 @@ A methodology for building portable, resilient, and scalable software-as-a-servi
 | XI | Logs | Treat logs as event streams written to stdout |
 | XII | Admin Processes | Run admin tasks as one-off processes |
 
-## Orchestration Protocol
+## Working through a question
 
-### Phase 1: Identify the Concern
+### Find the factor
 
-Determine which factor(s) are relevant to the user's question:
+Most questions map to one or two factors:
 
 - **Structuring code or repos** → Factor I (Codebase)
 - **Library versions or system tools** → Factor II (Dependencies)
@@ -61,22 +63,22 @@ Determine which factor(s) are relevant to the user's question:
 - **Log files, log aggregation, or structured logging** → Factor XI (Logs)
 - **Migrations, one-off scripts, or REPL access** → Factor XII (Admin Processes)
 
-### Phase 2: Load and Apply
+### Apply it
 
-Load the appropriate resource file(s), then:
+Load the resource for that factor, then:
 
 1. Identify the current state against the factor's principle
 2. Highlight any violations or gaps
 3. Propose concrete remediation steps with examples
 4. Note dependencies between factors (e.g., Factor III enables Factor IV)
 
-### Phase 3: Validate
+### Check the result
 
-After applying recommendations:
-- Confirm environment config is not in code
-- Confirm no local state is assumed to persist across restarts
-- Confirm deploy pipeline has distinct build → release → run stages
-- Confirm logs flow to stdout rather than files
+After the changes, confirm that:
+- deploy-specific config is not in code;
+- nothing assumes local state survives a restart;
+- the pipeline has separate build, release and run stages;
+- logs go to stdout, not files.
 
 ## Common Task Workflows
 
@@ -128,6 +130,6 @@ After applying recommendations:
 
 ## External References
 
-- [12factor.net](https://12factor.net/), Official methodology documentation
-- [Beyond the Twelve-Factor App](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/), Extended factors for modern cloud apps
-- [The Heroku Way](https://blog.heroku.com/), Practical implementation examples
+- [12factor.net](https://12factor.net/), the methodology itself
+- [Beyond the Twelve-Factor App](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/), Kevin Hoffman's 2016 extension to fifteen factors
+- [Twelve-Factor is now open source](https://12factor.net/blog/open-source-announcement), the November 2024 announcement and how to contribute

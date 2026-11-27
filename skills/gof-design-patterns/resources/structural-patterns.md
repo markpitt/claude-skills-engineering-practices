@@ -152,7 +152,7 @@ Structural patterns explain how to assemble objects and classes into larger stru
 - Avoid making facade a monolithic dumping ground
 
 **Example Use Cases**:
-- Framework setup (one call initializes multiple subsystems)
+- Framework setup (one call initialises multiple subsystems)
 - Compiler phases (simplified API to lexer, parser, code generator)
 - Home automation (unified interface to lighting, climate, security)
 - MVC framework (unified interface to model, view, controller setup)
@@ -187,7 +187,7 @@ Structural patterns explain how to assemble objects and classes into larger stru
 **Example Use Cases**:
 - Text editors (character objects, font metadata shared)
 - Game engines (particles, tiles, sprites with shared graphical data)
-- UI toolkits (button labels, colors shared across instances)
+- UI toolkits (button labels, colours shared across instances)
 - Graphics systems (repeated shapes with shared data)
 - String interning (strings as flyweights)
 
@@ -198,7 +198,7 @@ Structural patterns explain how to assemble objects and classes into larger stru
 **Intent**: Provide a surrogate or placeholder for another object to control access to it.
 
 **When to Use**:
-- Lazy initialization (virtual proxy): create expensive objects on demand
+- Lazy initialisation (virtual proxy): create expensive objects on demand
 - Access control (protection proxy): control access based on permissions
 - Reference remote object (remote proxy): represents object in different address space
 - Add functionality before/after object access
@@ -214,7 +214,7 @@ Structural patterns explain how to assemble objects and classes into larger stru
 **Implementation Considerations**:
 - Proxy and RealSubject implement same Subject interface
 - Proxy maintains reference to RealSubject (or creates on demand)
-- Additional behavior before/after forwarding to RealSubject
+- Additional behaviour before/after forwarding to RealSubject
 - Transparent vs. explicit proxy usage
 - Proxy can cache RealSubject reference or recreate as needed
 
@@ -231,7 +231,7 @@ Structural patterns explain how to assemble objects and classes into larger stru
 - Remote objects (proxies for network services)
 - Permission-controlled objects (proxies for sensitive data)
 - Image loading (proxy loads on first access)
-- Database query optimization (proxy delays loading until needed)
+- Database query optimisation (proxy delays loading until needed)
 - Synchronized access to shared resources
 - Audit logging (all accesses logged through proxy)
 
@@ -253,11 +253,11 @@ Structural patterns explain how to assemble objects and classes into larger stru
 
 ### Language-Specific Notes
 
-**Rust**: Use traits for interfaces, trait objects for runtime polymorphism, leverage ownership for smart resource management in Proxy.
+**Rust**: Use traits for interfaces, trait objects for runtime polymorphism, use ownership for smart resource management in Proxy.
 
 **Python**: Use duck typing for Adapter, decorators for Decorator pattern, metaclasses for customization.
 
-**C#**: Use interfaces and abstract classes, properties for lazy initialization, events for observer-like patterns.
+**C#**: Use interfaces and abstract classes, properties for lazy initialisation, events for observer-like patterns.
 
 **TypeScript**: Use interfaces, discriminated unions, generic constraints for type safety.
 
@@ -267,9 +267,9 @@ Structural patterns explain how to assemble objects and classes into larger stru
 
 ### General Principles
 
-1. **Prefer Composition**: Most structural patterns favor composition over inheritance
+1. **Prefer Composition**: Most structural patterns favour composition over inheritance
 2. **Maintain Type Safety**: Use language type systems to enforce relationships
-3. **Minimize Complexity**: Add structure only when it simplifies the system
+3. **Minimise Complexity**: Add structure only when it simplifies the system
 4. **Clear Responsibilities**: Each pattern component has a single, clear purpose
 5. **Document Relationships**: Explain how pattern components interact
 

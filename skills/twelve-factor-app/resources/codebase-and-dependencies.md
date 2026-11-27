@@ -1,6 +1,6 @@
 # Codebase and Dependencies
 
-Covers **Factor I: Codebase** and **Factor II: Dependencies** — the foundational rules for how twelve-factor apps manage their source code and external libraries.
+Covers **Factor I: Codebase** and **Factor II: Dependencies**. The foundational rules for how twelve-factor apps manage their source code and external libraries.
 
 ---
 
@@ -17,9 +17,9 @@ A twelve-factor app always has exactly **one codebase** per application, tracked
 | Scenario | Twelve-Factor Verdict |
 |---|---|
 | Single repo → multiple deploys (prod, staging, dev) | ✅ Correct |
-| Multiple repos for one app | ❌ Violation — it's a distributed system; each component must be its own app |
-| Multiple apps sharing one repo (monorepo) | ❌ Violation — shared code should become a library, managed via dependency manager |
-| Different versions active per deploy | ✅ Correct — same codebase, different commits deployed |
+| Multiple repos for one app | ❌ Violation: it's a distributed system; each component must be its own app |
+| Multiple apps sharing one repo (monorepo) | ❌ Violation: shared code should become a library, managed via dependency manager |
+| Different versions active per deploy | ✅ Correct: same codebase, different commits deployed |
 
 ### Deploys
 
@@ -182,7 +182,7 @@ Always commit lockfiles (`package-lock.json`, `Gemfile.lock`, `poetry.lock`, `go
 
 A twelve-factor codebase passes this test:
 
-> A new developer can check out the repo, run a single build command, and have a running app — with no prior knowledge of what dependencies exist.
+> A new developer can check out the repo, run a single build command, and have a running app: with no prior knowledge of what dependencies exist.
 
 ```bash
 # Should be the complete setup for a new developer
