@@ -29,7 +29,7 @@ Use this map for polyglot recommendations. Keep advice ecosystem-native.
 - Core frameworks: xUnit/NUnit/MSTest (team standard)
 - Guidance highlights:
   - fast, isolated, repeatable, self-checking, timely tests
-  - test behavior via public methods
+  - test behaviour via public methods
   - avoid infrastructure dependencies in unit tests
   - Source:
     - <https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices>
@@ -63,4 +63,4 @@ Use this map for polyglot recommendations. Keep advice ecosystem-native.
 
 - Match framework to existing ecosystem and build toolchain.
 - Avoid introducing cross-ecosystem tooling unless there is a clear migration plan.
-- Standardize one primary framework per language in a repository to reduce cognitive load.
+- Standardise one primary framework per language in a repository to reduce cognitive load.

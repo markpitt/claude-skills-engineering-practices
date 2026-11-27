@@ -1,6 +1,6 @@
 # Common Root Causes by Domain
 
-This reference guide catalogs frequently encountered root causes across different problem domains to help pattern recognition during root cause analysis.
+This reference guide catalogues frequently encountered root causes across different problem domains to help pattern recognition during root cause analysis.
 
 ## Software Engineering
 
@@ -194,11 +194,11 @@ This reference guide catalogs frequently encountered root causes across differen
 - Conflicting requirements
 
 **Incentive Misalignment**
-- Metrics encourage wrong behaviors
+- Metrics encourage wrong behaviours
 - Pressure to cut corners
 - Blame culture discourages reporting
-- Speed prioritized over quality
-- Individual vs team optimization
+- Speed prioritised over quality
+- Individual vs team optimisation
 
 ### Resource Constraints
 
@@ -235,10 +235,10 @@ This reference guide catalogs frequently encountered root causes across differen
 - Cognitive overload
 - Emotional exhaustion
 
-### Habits & Behaviors
+### Habits & Behaviours
 
 **Time Management**
-- No prioritization system
+- No prioritisation system
 - Overcommitment
 - Procrastination patterns
 - Interruption-driven work
@@ -272,7 +272,7 @@ This reference guide catalogs frequently encountered root causes across differen
 - Conflicting commitments
 - Lack of automation
 - No tracking mechanisms
-- Poor organization
+- Poor organisation
 
 ### Knowledge & Skills
 
@@ -304,7 +304,7 @@ If your analysis ends with any of these, you haven't reached the root cause yet:
 
 ❌ **"It just broke"** → What caused the failure? Why did it fail now?
 
-❌ **"Not enough time"** → Why was time insufficient? What prioritization led to this?
+❌ **"Not enough time"** → Why was time insufficient? What prioritisation led to this?
 
 ❌ **"Lack of communication"** → What process or tool failure enabled miscommunication?
 
@@ -372,7 +372,7 @@ When you see:
 
 As you encounter new root causes:
 1. Document the pattern
-2. Categorize appropriately
+2. Categorise appropriately
 3. Note distinctive characteristics
 4. Share with the team
 5. Update this reference

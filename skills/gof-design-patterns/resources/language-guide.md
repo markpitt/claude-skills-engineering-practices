@@ -21,12 +21,12 @@ This guide provides detailed implementation strategies for Gang of Four design p
 
 - **Interfaces**: Define contracts for patterns
 - **Abstract Classes**: Template Method, Factory Method base classes
-- **Properties**: Encapsulation, lazy initialization
+- **Properties**: Encapsulation, lazy initialisation
 - **Events**: Observer pattern implementation
 - **Generics**: Type-safe patterns (Repository, Factory)
 - **LINQ**: Iterator, Visitor operations
 - **Async/Await**: Asynchronous Command, Proxy
-- **Extension Methods**: Decorator-like behavior
+- **Extension Methods**: Decorator-like behaviour
 - **Attributes**: Metadata for pattern configuration
 
 ### Pattern-Specific Guidance
@@ -107,7 +107,7 @@ public class Decorator : IComponent
 - Use dependency injection containers (Microsoft.Extensions.DependencyInjection)
 - Prefer async/await for asynchronous operations
 - Use IDisposable for resource cleanup in patterns
-- Leverage LINQ for collection operations in Iterator
+- Use LINQ for collection operations in Iterator
 - Use Expression-bodied members for simple implementations
 
 ---
@@ -222,7 +222,7 @@ impl Context {
 
 ### Best Practices
 - Use newtype pattern for type safety
-- Leverage enums for State pattern (type-safe states)
+- Use enums for State pattern (type-safe states)
 - Use Arc<Mutex<T>> for shared mutable state
 - Prefer composition over complex inheritance
 - Use trait objects (dyn Trait) for runtime polymorphism
@@ -350,12 +350,12 @@ class Subject:
 
 ### Best Practices
 - Use ABC for formal interfaces when needed
-- Leverage duck typing for flexibility
+- Use duck typing for flexibility
 - Use type hints (from typing module) for clarity
 - Prefer composition over inheritance
 - Use __slots__ for memory efficiency in Flyweight
 - Use context managers (with statement) for resource management
-- Leverage generators for Iterator pattern
+- Use generators for Iterator pattern
 - Use dataclasses for simple data structures
 - Follow PEP 8 style guide
 
@@ -367,7 +367,7 @@ class Subject:
 
 - **Abstract Classes**: Define contracts
 - **Interfaces**: Implicit (every class is an interface)
-- **Mixins**: Share behavior across classes
+- **Mixins**: Share behaviour across classes
 - **Factory Constructors**: Named constructors for factories
 - **Getters/Setters**: Computed properties
 - **Generics**: Type-safe patterns
@@ -481,11 +481,11 @@ class Subject {
 
 ### Best Practices
 - Use factory constructors for Factory patterns
-- Leverage named constructors for different creation methods
+- Use named constructors for different creation methods
 - Use const constructors for immutable objects (Flyweight)
-- Use mixins for shared behavior without inheritance
+- Use mixins for shared behaviour without inheritance
 - Use Streams for Observer pattern (reactive programming)
-- Leverage async/await for asynchronous patterns
+- Use async/await for asynchronous patterns
 - Use extension methods to add functionality without inheritance
 - Follow Effective Dart guidelines
 - Use sealed classes (Dart 3+) for exhaustive State pattern matching
@@ -634,7 +634,7 @@ func (d *Decorator) Operation() string {
 - Keep interfaces small (single method common)
 - Use struct embedding for composition
 - Use sync.Once for thread-safe Singleton
-- Leverage function types for Strategy and Command
+- Use function types for Strategy and Command
 - Use channels for Observer pattern communication
 - Use defer for cleanup in patterns (Close, Unlock)
 - Error handling with multiple return values
@@ -757,11 +757,11 @@ class Subject {
 
 ### Best Practices
 - Use modern JavaScript/TypeScript features
-- Leverage async/await for asynchronous operations
+- Use async/await for asynchronous operations
 - Use arrow functions for concise syntax
 - Destructure parameters for clarity
 - Use const/let instead of var
-- Leverage built-in methods (map, filter, reduce)
+- Use built-in methods (map, filter, reduce)
 - Use modules for encapsulation
 - Follow JavaScript Standard Style or similar
 
@@ -918,11 +918,11 @@ class Example {
 
 ### Best Practices
 - Use strict mode (strict: true in tsconfig.json)
-- Leverage type inference where possible
+- Use type inference where possible
 - Use generics for reusable, type-safe code
 - Prefer interfaces for object shapes, types for unions/intersections
 - Use readonly for immutability
-- Leverage discriminated unions for State pattern
+- Use discriminated unions for State pattern
 - Use utility types (Partial, Required, Pick, Omit)
 - Use enums sparingly (prefer union types)
 - Follow TypeScript official style guide
@@ -1122,16 +1122,16 @@ Object* object_create(void) {
 2. **Type Systems**
    - Static typing: Use generics, interfaces
    - Dynamic typing: Use duck typing, protocols
-   - Leverage type system for compile-time safety
+   - Use type system for compile-time safety
 
 3. **Memory Management**
    - GC languages: Focus on references and lifetime
    - Manual management: Document ownership, provide cleanup
-   - Rust: Leverage ownership system for safety
+   - Rust: Use ownership system for safety
 
 4. **Concurrency**
    - Thread-safe Singleton in multithreaded environments
-   - Use language-appropriate synchronization (locks, channels, actors)
+   - Use language-appropriate synchronisation (locks, channels, actors)
    - Consider immutability for concurrent patterns
 
 5. **Error Handling**
@@ -1148,4 +1148,4 @@ Object* object_create(void) {
 
 ---
 
-This guide should be consulted when implementing patterns in specific languages to ensure idiomatic, production-quality code.
+This guide should be consulted when implementing patterns in specific languages to make sure idiomatic, production-quality code.

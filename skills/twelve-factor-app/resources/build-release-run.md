@@ -1,6 +1,6 @@
 # Build, Release, Run
 
-Covers **Factor V: Build, Release, Run** — strict separation of the three deployment stages to ensure reproducible, auditable, and rollback-capable deployments.
+Covers **Factor V: Build, Release, Run**. Strict separation of the three deployment stages to make sure reproducible, auditable, and rollback-capable deployments.
 
 ---
 
@@ -67,7 +67,7 @@ Build v42 + Staging config   → Release v42-staging
 
 **Release immutability rules:**
 - Every release has a unique release ID (timestamp or incrementing number)
-- Releases are an append-only ledger — a release is never mutated
+- Releases are an append-only ledger: a release is never mutated
 - Any change (code or config) requires creating a new release
 - Releases can be rolled back by re-activating a previous release ID
 
@@ -210,7 +210,7 @@ COPY --from=builder /app/node_modules ./node_modules
 CMD ["node", "dist/server.js"]
 ```
 
-The **release** is the container image tagged with a specific version. Config (Factor III) is injected at container startup via environment variables — never baked into the image.
+The **release** is the container image tagged with a specific version. Config (Factor III) is injected at container startup via environment variables: never baked into the image.
 
 ```bash
 # Release: image + config = running container

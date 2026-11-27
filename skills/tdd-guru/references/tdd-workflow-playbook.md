@@ -2,7 +2,7 @@
 
 Use this process when the user asks for practical TDD execution.
 
-## 1) Define the Smallest Next Behavior
+## 1) Define the Smallest Next Behaviour
 
 - Phrase the next increment as an observable behavior.
 - Prefer wording that can be asserted from the public interface.
@@ -11,7 +11,7 @@ Use this process when the user asks for practical TDD execution.
 ## 2) Red (Failing Test)
 
 - Write one failing test for one behavior.
-- Name the test after behavior + expected outcome.
+- Name the test after behaviour + expected outcome.
 - Keep setup explicit and minimal.
 - Avoid adding production logic to test helpers.
 
@@ -24,12 +24,12 @@ Use this process when the user asks for practical TDD execution.
 ## 4) Refactor (Design Improvement)
 
 - Improve naming, extraction, cohesion, and duplication.
-- Keep behavior unchanged; tests remain green.
+- Keep behaviour unchanged; tests remain green.
 - If refactor breaks tests, evaluate whether tests are over-coupled to structure.
 
 ## 5) Expand Coverage Intentionally
 
-- Add edge-case tests only when behavior or risk demands it.
+- Add edge-case tests only when behaviour or risk demands it.
 - Push checks downward (unit/component) when possible.
 - Keep high-level tests for critical journey confidence, not exhaustive permutations.
 
@@ -49,7 +49,7 @@ Use this process when the user asks for practical TDD execution.
 
 When asked for a TDD plan, respond in this structure:
 
-1. Behavior statement
+1. Behaviour statement
 2. First failing test
 3. Minimal production step
 4. Refactor targets

@@ -7,7 +7,7 @@ This document contains complete RCA examples across different domains to illustr
 ### Problem Statement
 **What:** User authentication fails intermittently with "Invalid token" error
 **Where:** Production API, /auth/verify endpoint
-**When:** Started November 20, 2024, around 14:00 UTC
+**When:** Started 20 November 2024, around 14:00 UTC
 **Impact:** ~15% of authentication attempts failing, affecting 500+ users per hour
 
 ### Evidence Gathered
@@ -21,7 +21,7 @@ This document contains complete RCA examples across different domains to illustr
 
 **WHY #1:** Why are JWT signature verifications failing?
 - **Answer:** Different instances use different signing keys
-- **Evidence:** Logged the key fingerprints—2 different values across instances
+- **Evidence:** Logged the key fingerprints. 2 different values across instances
 - **Verified by:** Connected to each instance and checked environment
 
 **WHY #2:** Why do different instances have different signing keys?
@@ -45,7 +45,7 @@ This document contains complete RCA examples across different domains to illustr
 - **Verified by:** Reviewed docs/kubernetes-migration.md
 
 ### Root Cause
-**Migration checklist incomplete—doesn't include environment variable verification**
+**Migration checklist incomplete: doesn't include environment variable verification**
 
 ### Solutions
 
@@ -73,7 +73,7 @@ This document contains complete RCA examples across different domains to illustr
    - **Status:** 🔄 In progress
 
 ### Lessons Learned
-- Migration checklists are critical and must be comprehensive
+- Migration checklists are critical and must be full
 - Fallback defaults (random secret generation) can mask configuration problems
 - Multi-instance deployments need consistency validation
 - Early detection (startup validation) prevents runtime failures
@@ -104,12 +104,12 @@ This document contains complete RCA examples across different domains to illustr
 
 **WHY #2:** Why isn't coolant circulating properly?
 - **Answer:** Water pump isn't functioning
-- **Evidence:** Removed belt and tested pump—no resistance when spinning pulley
+- **Evidence:** Removed belt and tested pump. No resistance when spinning pulley
 - **Verified by:** Mechanic inspection confirmed internal pump failure
 
 **WHY #3:** Why did the water pump fail?
 - **Answer:** Pump bearings seized due to contaminated coolant
-- **Evidence:** Drained coolant—looks rusty and contains debris
+- **Evidence:** Drained coolant. Looks rusty and contains debris
 - **Verified by:** Coolant test shows high contamination, wrong type mixed in
 
 **WHY #4:** Why was the coolant contaminated with the wrong type?
@@ -145,7 +145,7 @@ This document contains complete RCA examples across different domains to illustr
 
 ### Lessons Learned
 - Cheap service can be expensive in the long run
-- Trust but verify—even reputable shops make poor choices
+- Trust but verify: even reputable shops make poor choices
 - Manufacturer specifications exist for good reasons
 - Small maintenance decisions can have large consequences
 
@@ -215,7 +215,7 @@ This document contains complete RCA examples across different domains to illustr
 
 **WHY #4:** Why was the query added without an index?
 - **Answer:** Recent feature added customer transaction history, didn't anticipate load
-- **Evidence:** Git history shows feature added Nov 15, tested with <1000 records
+- **Evidence:** Git history shows feature added on 15 November, tested with <1000 records
 - **Verified by:** Code review of commit ab3c92f, load tests done with small dataset
 
 **WHY #5:** Why didn't load testing catch this?
@@ -232,7 +232,7 @@ This document contains complete RCA examples across different domains to illustr
 - Added index on `transactions.customer_id`
 - Increased connection pool from 20 to 50
 - Restarted payment service instances
-- **Result:** Failure rate dropped to <1%, latency normalized
+- **Result:** Failure rate dropped to <1%, latency normalised
 
 **Root Cause Fix:**
 1. **Production-scale load testing:**
@@ -249,7 +249,7 @@ This document contains complete RCA examples across different domains to illustr
 1. **Observability:**
    - Add query performance monitoring
    - Alert on slow queries (>1s)
-   - Dashboard showing connection pool utilization
+   - Dashboard showing connection pool utilisation
    - **Status:** ✅ Deployed
 
 2. **Resilience:**
@@ -346,7 +346,7 @@ This document contains complete RCA examples across different domains to illustr
 - **Verified by:** Therapy sessions revealed this core belief
 
 **WHY #5:** Why do I tie self-worth to being available for others?
-- **Answer:** Learned pattern from childhood—approval came from being helpful
+- **Answer:** Learned pattern from childhood. Approval came from being helpful
 - **Evidence:** Family dynamics rewarded being the "helpful one"
 - **Verified by:** Therapy exploration of family patterns
 
@@ -374,7 +374,7 @@ This document contains complete RCA examples across different domains to illustr
 
 2. **Values clarification:**
    - Identified core values beyond being helpful
-   - Using values to prioritize decisions
+   - Using values to prioritise decisions
    - **Status:** 🔄 In progress
 
 **Systemic Changes:**
@@ -433,7 +433,7 @@ This document contains complete RCA examples across different domains to illustr
 
 - **Simple/linear problems:** 5 Whys is fast and effective
 - **Complex/unclear problems:** Fishbone first to explore, then 5 Whys to drill down
-- **Multiple concurrent issues:** Pareto analysis to prioritize
+- **Multiple concurrent issues:** Pareto analysis to prioritise
 - **High-stakes problems:** Multiple methods + formal documentation
 
 ### Documentation Value

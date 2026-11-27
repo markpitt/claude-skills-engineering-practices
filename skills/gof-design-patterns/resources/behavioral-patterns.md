@@ -36,10 +36,10 @@ Behavioral patterns are concerned with object collaboration and the delegation o
 
 ## 2. Command - Encapsulate Requests as Objects
 
-**Intent**: Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
+**Intent**: Encapsulate a request as an object, thereby letting you parameterise clients with different requests, queue or log requests, and support undoable operations.
 
 **When to Use**:
-- Parameterize objects with an action to perform
+- Parameterise objects with an action to perform
 - Specify, queue, and execute requests at different times
 - Support undo/redo functionality
 - Support logging changes for crash recovery
@@ -140,16 +140,16 @@ Behavioral patterns are concerned with object collaboration and the delegation o
 
 ---
 
-## 5. Mediator - Centralize Communication Between Objects
+## 5. Mediator - Centralise Communication Between Objects
 
 **Intent**: Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly.
 
 **When to Use**:
 - Set of objects communicate in well-defined but complex ways
 - Reusing object is difficult due to dependencies on many others
-- Behavior distributed between classes should be customizable without subclassing
+- Behaviour distributed between classes should be customisable without subclassing
 - Reduce coupling between components
-- Centralize complex interactions
+- Centralise complex interactions
 
 **When NOT to Use**:
 - Few objects interact simply
@@ -158,7 +158,7 @@ Behavioral patterns are concerned with object collaboration and the delegation o
 
 **Implementation Considerations**:
 - Mediator: interface for communicating with colleagues
-- ConcreteMediator: implements cooperative behavior, knows colleagues
+- ConcreteMediator: implements cooperative behaviour, knows colleagues
 - Colleague: knows its mediator, communicates through it
 - Two-way references (colleague to mediator, mediator to colleagues)
 - Avoid mediator becoming monolithic
@@ -247,14 +247,14 @@ Behavioral patterns are concerned with object collaboration and the delegation o
 
 ---
 
-## 8. State - Allow Object to Change Behavior with State
+## 8. State - Allow Object to Change Behaviour with State
 
-**Intent**: Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
+**Intent**: Allow an object to alter its behaviour when its internal state changes. The object will appear to change its class.
 
 **When to Use**:
-- Object behavior depends on state, must change at runtime
+- Object behaviour depends on state, must change at runtime
 - Operations have large conditional statements dependent on state
-- State-specific behavior should be independently defined
+- State-specific behaviour should be independently defined
 - State transitions are well-defined
 
 **When NOT to Use**:
@@ -264,8 +264,8 @@ Behavioral patterns are concerned with object collaboration and the delegation o
 
 **Implementation Considerations**:
 - Context: maintains current state, delegates to state object
-- State: interface for encapsulating behavior
-- ConcreteState: each implements behavior for particular state
+- State: interface for encapsulating behaviour
+- ConcreteState: each implements behaviour for particular state
 - Context handles state transitions vs. states self-transitioning
 - Shared state objects (flyweight) vs. unique instances
 - State creation (pre-created vs. on-demand)
@@ -285,10 +285,10 @@ Behavioral patterns are concerned with object collaboration and the delegation o
 **Intent**: Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
 
 **When to Use**:
-- Many related classes differ only in behavior
+- Many related classes differ only in behaviour
 - Need different variants of an algorithm
 - Algorithm uses data client shouldn't know about
-- Class defines many behaviors appearing as conditional statements
+- Class defines many behaviours appearing as conditional statements
 - Runtime algorithm selection
 
 **When NOT to Use**:
@@ -323,8 +323,8 @@ Behavioral patterns are concerned with object collaboration and the delegation o
 
 **When to Use**:
 - Implement invariant parts of algorithm once
-- Let subclasses customize variable parts
-- Common behavior among subclasses should be factored and centralized
+- Let subclasses customise variable parts
+- Common behaviour among subclasses should be factored and centralised
 - Control which operations subclasses can extend
 - Avoid code duplication
 
@@ -337,15 +337,15 @@ Behavioral patterns are concerned with object collaboration and the delegation o
 - AbstractClass: defines template method and primitive operations
 - ConcreteClass: implements primitive operations
 - **Abstract operations**: must be implemented by subclasses
-- **Concrete operations**: default behavior, may be overridden
+- **Concrete operations**: default behaviour, may be overridden
 - **Hook operations**: empty default, may be overridden
 - Hollywood Principle: "Don't call us, we'll call you"
 
 **Example Use Cases**:
-- Framework classes (extend to customize)
+- Framework classes (extend to customise)
 - Test frameworks (setUp, tearDown hooks)
 - Data processing pipelines (read, process, write)
-- Lifecycle methods (initialization, execution, cleanup)
+- Lifecycle methods (initialisation, execution, cleanup)
 - Report generation
 - Document processing
 - Game loops
@@ -378,7 +378,7 @@ Behavioral patterns are concerned with object collaboration and the delegation o
 - Breaking encapsulation (visitor may need access to element internals)
 
 **Example Use Cases**:
-- Compilers (AST traversal for optimization, code generation, type checking)
+- Compilers (AST traversal for optimisation, code generation, type checking)
 - File system operations (calculate size, search, backup)
 - Export to different formats (XML, JSON, PDF)
 - Reporting and analytics
@@ -409,7 +409,7 @@ Behavioral patterns are concerned with object collaboration and the delegation o
 
 **Rust**: Use traits for interfaces, pattern matching for state transitions, closures for strategies and commands.
 
-**Python**: Use ABC for interfaces, decorators for commands, classes for state objects, leverage duck typing.
+**Python**: Use ABC for interfaces, decorators for commands, classes for state objects, use duck typing.
 
 **C#**: Use interfaces and delegates/events, async/await for asynchronous commands, properties for state.
 

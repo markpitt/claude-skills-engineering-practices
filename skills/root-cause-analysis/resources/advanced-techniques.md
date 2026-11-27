@@ -64,7 +64,7 @@ Calculated failure rates identify highest-risk paths for mitigation.
 
 ### Barrier Framework Expansion
 
-Move beyond simple prevention/detection/mitigation to comprehensive layers:
+Move beyond simple prevention/detection/mitigation to full layers:
 
 **Layer 1: Risk Prevention**
 - Eliminate hazard at source
@@ -77,7 +77,7 @@ Move beyond simple prevention/detection/mitigation to comprehensive layers:
 - Example: Role-based access controls
 - Example: Physical barriers
 
-**Layer 3: Immediate Defense**
+**Layer 3: Immediate Defence**
 - Detect and respond quickly
 - Example: Automated alerts and failovers
 - Example: Circuit breakers
@@ -138,7 +138,7 @@ Barrier Assessment Template
 
 For complex problems, chain multiple methodologies in sequence:
 
-### Orchestration Pattern 1: Explore → Prioritize → Analyze
+### Orchestration Pattern 1: Explore → Prioritise → Analyse
 
 Best for: Complex systems with multiple possible causes
 
@@ -146,24 +146,24 @@ Best for: Complex systems with multiple possible causes
 - Brainstorm across all categories
 - Identify 5-7 possible root cause paths
 
-**Step 2: Pareto (Prioritize)**
+**Step 2: Pareto (Prioritise)**
 - Estimate frequency/impact of each path
 - Identify vital few (top 2-3)
 
-**Step 3: 5 Whys (Analyze)**
+**Step 3: 5 Whys (Analyse)**
 - Deep dive on each priority path
 - Reach actionable root causes
 
 **Step 4: Barrier Analysis (Strengthen)**
-- Identify what defenses failed
+- Identify what defences failed
 - Add layers of protection
 
-### Orchestration Pattern 2: Categorize → Structure → Verify
+### Orchestration Pattern 2: Categorise → Structure → Verify
 
 Best for: Process failures and organizational issues
 
-**Step 1: Fishbone (Categorize)**
-- Organize issues by domain (people, process, tools, etc.)
+**Step 1: Fishbone (Categorise)**
+- Organise issues by domain (people, process, tools, etc.)
 - Create mental model of system
 
 **Step 2: Barrier Analysis (Structure)**
@@ -177,11 +177,11 @@ Best for: Process failures and organizational issues
 **Step 4: Solution Design**
 - Add/strengthen barriers based on findings
 
-### Orchestration Pattern 3: Prioritize → Deep Dive → Structure
+### Orchestration Pattern 3: Prioritise → Deep Dive → Structure
 
 Best for: High-cost, high-impact problems with resource constraints
 
-**Step 1: Pareto (Prioritize)**
+**Step 1: Pareto (Prioritise)**
 - Identify highest-impact contributing factors
 - Focus resources on vital few
 
@@ -193,7 +193,7 @@ Best for: High-cost, high-impact problems with resource constraints
 - Understand why each path exists
 - Identify controllable causes
 
-### Orchestration Pattern 4: Compare → Categorize → Analyze
+### Orchestration Pattern 4: Compare → Categorise → Analyse
 
 Best for: Issues appearing in multiple contexts
 
@@ -201,11 +201,11 @@ Best for: Issues appearing in multiple contexts
 - Collect similar incidents
 - Identify patterns and differences
 
-**Step 2: Fishbone (Categorize)**
+**Step 2: Fishbone (Categorise)**
 - Separate domain-specific from common causes
 - Identify what's universal
 
-**Step 3: 5 Whys (Analyze)**
+**Step 3: 5 Whys (Analyse)**
 - Deep dive on common factors
 - Find systemic root cause
 
@@ -213,7 +213,7 @@ Best for: Issues appearing in multiple contexts
 
 ## Enterprise-Scale RCA Orchestration
 
-For large organizations analyzing systemic issues:
+For large organisations analysing systemic issues:
 
 ### Phase 1: Incident Triage
 
@@ -300,16 +300,16 @@ INCIDENT REPORT
 - Include in training for onboarding
 
 **Pattern Tracking:**
-- Categorize root causes by type
+- Categorise root causes by type
 - Identify recurring patterns
-- Prioritize systemic fixes by frequency
+- Prioritise systemic fixes by frequency
 - Measure impact of improvements
 
 ---
 
 ## Verification Frameworks
 
-### Comprehensive Root Cause Testing
+### Full Root Cause Testing
 
 Before declaring root cause verified, pass all tests:
 
@@ -417,7 +417,7 @@ Tools: Miro, Lucidchart, Visio, Draw.io
 
 Advantages:
 - Easy collaboration
-- Can capture and organize brainstorm
+- Can capture and organise brainstorm
 - Export and share
 - Template available
 
@@ -429,7 +429,7 @@ Features:
 - Formal notation
 - Probability calculation
 - Cut set analysis
-- Reliability modeling
+- Reliability modelling
 
 ### Evidence Documentation
 
@@ -462,7 +462,7 @@ Spending too long in analysis phase, delaying fixes.
 **Prevention:**
 - Time-box exploration
 - Accept good-enough analysis under time pressure
-- Implement immediate fix while analyzing root cause
+- Implement immediate fix while analysing root cause
 - Can improve later
 
 ### Pitfall 2: Over-Complexity
@@ -513,7 +513,7 @@ Connect RCA to broader system understanding:
 
 ### System Archetypes
 
-Recognize recurring system patterns:
+Recognise recurring system patterns:
 
 - **Balancing Loop**: System self-corrects (thermostat)
 - **Reinforcing Loop**: Problem amplifies (success builds success or failure builds failure)
@@ -521,9 +521,9 @@ Recognize recurring system patterns:
 - **Policy Resistance**: System resists change (fix creates new problem)
 - **Shifting Burden**: Quick fix prevents real fix (treating symptoms)
 
-### Leverage Points (Donella Meadows)
+### Use Points (Donella Meadows)
 
-For systemic change, target highest-leverage interventions:
+For systemic change, target highest-use interventions:
 
 1. **Paradigm Shifts**: Change how system thinks (most powerful)
 2. **Rules/Incentives**: Formal rules and metrics
@@ -545,7 +545,7 @@ Connect RCA findings to improvement initiatives:
 2. Plan improvement based on root cause
 3. Implement small improvement
 4. Check effectiveness
-5. Act to standardize or escalate
+5. Act to standardise or escalate
 6. Repeat with next problem
 
 **Lean Principles:**
@@ -557,10 +557,10 @@ Connect RCA findings to improvement initiatives:
 **Six Sigma DMAIC:**
 - **Define**: Problem identified through symptoms
 - **Measure**: RCA gathering phase
-- **Analyze**: RCA analysis methodologies
+- **Analyse**: RCA analysis methodologies
 - **Improve**: Based on root cause understanding
 - **Control**: Prevention measures
 
 ---
 
-**Remember**: Advanced methodologies provide rigor for high-stakes problems. Don't let formality prevent action—use as much rigor as situation demands, not more.
+**Remember**: Advanced methodologies provide rigor for high-stakes problems. Don't let formality prevent action: use as much rigor as situation demands, not more.

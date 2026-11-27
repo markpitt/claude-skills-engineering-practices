@@ -1,6 +1,6 @@
 # Disposability and Dev/Prod Parity
 
-Covers **Factor IX: Disposability** and **Factor X: Dev/Prod Parity** — maximising robustness through fast-starting, cleanly-shutting processes, and eliminating the gaps between environments.
+Covers **Factor IX: Disposability** and **Factor X: Dev/Prod Parity**. Maximising robustness through fast-starting, cleanly-shutting processes, and eliminating the gaps between environments.
 
 ---
 
@@ -8,9 +8,9 @@ Covers **Factor IX: Disposability** and **Factor X: Dev/Prod Parity** — maximi
 
 ### Principle
 
-> Maximize robustness with fast startup and graceful shutdown.
+> Maximise robustness with fast startup and graceful shutdown.
 
-Twelve-factor processes are **disposable** — they can be started or stopped at any moment. This enables elastic scaling, rapid config changes, and resilient production deploys.
+Twelve-factor processes are **disposable**: they can be started or stopped at any moment. This enables elastic scaling, rapid config changes, and resilient production deploys.
 
 ### Fast Startup
 
@@ -97,7 +97,7 @@ srv.ListenAndServe()
 
 ### Idempotent Jobs
 
-Worker processes must handle **sudden death** robustly — the underlying hardware may fail without warning, bypassing the SIGTERM graceful shutdown path.
+Worker processes must handle **sudden death** robustly: the underlying hardware may fail without warning, bypassing the SIGTERM graceful shutdown path.
 
 **Jobs must be idempotent** or use a transactional queue that returns failed jobs:
 
@@ -223,7 +223,7 @@ stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
 
 ### Adapter Libraries Are Acceptable, But Use Them Consistently
 
-Adapter libraries (e.g., ActiveRecord, SQLAlchemy, ActiveSupport::Cache) are fine — they handle portability. The twelve-factor rule is that **all environments use the same adapter pointed at the same type of backing service**:
+Adapter libraries (e.g., ActiveRecord, SQLAlchemy, ActiveSupport::Cache) are fine. They handle portability. The twelve-factor rule is that **all environments use the same adapter pointed at the same type of backing service**:
 
 ```python
 # Fine: SQLAlchemy abstracts the database
@@ -239,7 +239,7 @@ Dev/prod parity enables continuous deployment. When gaps are small:
 - Staging faithfully represents production behaviour
 - Deploys are safe and frequent because surprises are rare
 
-A team maintaining dev/prod parity can deploy multiple times per day with confidence. A team with large parity gaps must deploy infrequently and batch changes to reduce risk — increasing the very risk they fear.
+A team maintaining dev/prod parity can deploy multiple times per day with confidence. A team with large parity gaps must deploy infrequently and batch changes to reduce risk: increasing the very risk they fear.
 
 ### Common Violations and Fixes
 

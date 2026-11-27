@@ -2,10 +2,10 @@
 
 # kiss-principle
 
-Apply the KISS principle to reduce unnecessary complexity. Use ONLY when the user explicitly mentions "KISS", "simplify", "over-engineered", "too complex", or asks to review code/design specifically for unnecessary complexity. Do NOT trigger for general coding tasks, feature work, or architecture discussions unless simplicity is the named concern.
+Reviews code or a design for complexity it does not need, and says what to remove, what to keep and why. Use when the user names simplicity as the concern, for example "KISS", "simplify this", "this feels over-engineered", "too complex" or "can this be done more simply", or asks for a review aimed at unnecessary complexity. Do NOT use for general coding tasks, feature work or architecture discussions where simplicity is not the named concern.
 
 - **Entry point:** [SKILL.md](SKILL.md)
-- **Version:** 2.0
+- **Version:** 2.1.0
 - **Licence:** Apache-2.0, see [LICENSE](LICENSE)
 
 ## Install
@@ -31,4 +31,4 @@ Loaded on demand, not up front. SKILL.md routes to them.
 ## Part of a larger set
 
 One of the Engineering practices skills (`claude-skills-engineering-practices`). See the [group's list](../../README.md),
-or every group in [claude-skills](https://github.com/markpitt/claude-skills).
+or every group in [claude-skills](https://markpitt.dev/claude-skills/).

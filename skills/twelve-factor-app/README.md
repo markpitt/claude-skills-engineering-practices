@@ -2,10 +2,10 @@
 
 # twelve-factor-app
 
-Applies the Twelve-Factor App methodology when designing, building, reviewing, or auditing cloud-native and SaaS applications. Use when asked about 12-factor compliance, app architecture for cloud platforms, environment configuration, stateless processes, deployment pipelines, service design, or scaling strategies. Covers all 12 factors: codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, and admin processes.
+Applies the Twelve-Factor App methodology when designing, building, reviewing or auditing cloud-native and SaaS applications. Use when asked about 12-factor compliance, configuration in the environment, stateless processes, build, release and run separation, backing services, port binding, scaling by process, graceful shutdown, dev and prod parity, logs as event streams, or one-off admin tasks. Do NOT use for choosing a cloud provider, writing Kubernetes or Terraform manifests with no 12-factor question, or general code review.
 
 - **Entry point:** [SKILL.md](SKILL.md)
-- **Version:** 1.0.0
+- **Version:** 1.1.0
 - **Licence:** Apache-2.0, see [LICENSE](LICENSE)
 
 ## Install
@@ -35,4 +35,4 @@ Loaded on demand, not up front. SKILL.md routes to them.
 ## Part of a larger set
 
 One of the Engineering practices skills (`claude-skills-engineering-practices`). See the [group's list](../../README.md),
-or every group in [claude-skills](https://github.com/markpitt/claude-skills).
+or every group in [claude-skills](https://markpitt.dev/claude-skills/).

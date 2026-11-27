@@ -13,9 +13,9 @@ This resource provides 10+ actionable strategies for eliminating unnecessary com
 - [Strategy 7: Use Simple Data Structures](#strategy-7-use-simple-data-structures)
 - [Strategy 8: Remove Layers of Indirection](#strategy-8-remove-layers-of-indirection)
 - [Strategy 9: Use Configuration Over Codification](#strategy-9-use-configuration-over-codification)
-- [Strategy 10: Standardize Approaches](#strategy-10-standardize-approaches)
+- [Strategy 10: Standardise Approaches](#strategy-10-standardise-approaches)
 - [Strategy 11: Default to Library/Framework Features](#strategy-11-default-to-libraryframework-features)
-- [Strategy 12: Incremental Generalization](#strategy-12-incremental-generalization)
+- [Strategy 12: Incremental Generalisation](#strategy-12-incremental-generalisation)
 - [Simplification Planning Template](#simplification-planning-template)
 - [Key Takeaways](#key-takeaways)
 - [Next Steps](#next-steps)
@@ -192,7 +192,7 @@ def update_user(user_id, name=None, email=None):
 
 **How It Works:**
 1. Identify most common usage pattern
-2. Make that the default behavior
+2. Make that the default behaviour
 3. Allow override only when needed
 4. Reduces need for configuration
 
@@ -388,7 +388,7 @@ full_name = f"{user['first_name']} {user['last_name']}"
 display_name = user['first_name'].upper()
 ```
 
-**Exception:** When it provides clarity or domain-specific behavior, use custom types:
+**Exception:** When it provides clarity or domain-specific behaviour, use custom types:
 ```python
 # Makes sense to create custom type
 class Money:
@@ -442,18 +442,18 @@ def get_user(user_id):
 
 ## Strategy 9: Use Configuration Over Codification
 
-**The Idea:** Behaviors defined in configuration are simpler than behaviors in code.
+**The Idea:** Behaviours defined in configuration are simpler than behaviours in code.
 
 **How It Works:**
-1. Identify behaviors that differ based on context (environment, user type, etc.)
+1. Identify behaviours that differ based on context (environment, user type, etc.)
 2. Move to configuration instead of if/else branches
 3. Load configuration at startup
 4. Use configuration values in logic
 
 **When to Use:**
 - When you have many if/else branches checking context
-- When behavior differs between environments
-- When behavior might change without code changes
+- When behaviour differs between environments
+- When behaviour might change without code changes
 
 **Example:**
 ```python
@@ -494,7 +494,7 @@ def calculate_shipping(order, region):
             return rate
 ```
 
-## Strategy 10: Standardize Approaches
+## Strategy 10: Standardise Approaches
 
 **The Idea:** When teams use different approaches for similar problems, pick one and standardize.
 
@@ -555,14 +555,14 @@ Instead of building custom:
 - Testing → Use framework's test utilities
 ```
 
-## Strategy 12: Incremental Generalization
+## Strategy 12: Incremental Generalisation
 
-**The Idea:** Don't generalize prematurely. Build specific solutions, generalize only when patterns emerge.
+**The Idea:** Don't generalise prematurely. Build specific solutions, generalise only when patterns emerge.
 
 **How It Works:**
 1. Build specific solution for current problem
 2. When similar problem arises, build second specific solution
-3. When third similar problem appears, generalize
+3. When third similar problem appears, generalise
 4. Refactor the three implementations to common pattern
 
 **When to Use:**
@@ -676,7 +676,7 @@ Verification:
 
 3. **Measurement**: Know before and after metrics to prove improvement.
 
-4. **Team Alignment**: Ensure team understands why simplification is happening.
+4. **Team Alignment**: Make sure team understands why simplification is happening.
 
 5. **Prevention**: Better to design simple than to simplify later. Use constraints and defaults from the start.
 

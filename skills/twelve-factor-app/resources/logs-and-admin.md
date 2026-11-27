@@ -1,6 +1,6 @@
 # Logs and Admin Processes
 
-Covers **Factor XI: Logs** and **Factor XII: Admin Processes** — how twelve-factor apps handle observability and one-off management tasks.
+Covers **Factor XI: Logs** and **Factor XII: Admin Processes**. How twelve-factor apps handle observability and one-off management tasks.
 
 ---
 
@@ -18,7 +18,7 @@ A twelve-factor app **never concerns itself with the routing or storage of its o
 - A time-ordered stream of events from running processes
 - Written line-by-line to `stdout` (one event per line)
 - Each line has a timestamp, log level, and message
-- Continuous as long as the app runs — no fixed beginning or end
+- Continuous as long as the app runs: no fixed beginning or end
 
 **Logs are not:**
 - Files managed by the application
@@ -115,7 +115,7 @@ The environment (not the app) decides what to do with the stream:
 | Environment | Log Routing Mechanism |
 |---|---|
 | Local development | Stream visible in terminal foreground |
-| Heroku | `logplex` — captured and forwarded to log drains |
+| Heroku | `logplex`: captured and forwarded to log drains |
 | Kubernetes | `kubelet` captures stdout; `fluentd`/`fluentbit` forwards |
 | Docker | `docker logs` + configured log driver |
 | AWS ECS | CloudWatch Logs agent captures stdout |
@@ -175,7 +175,7 @@ Database migrations, data import/export scripts, REPL sessions, and one-time fix
 ### Key Rules for Admin Processes
 
 **1. Run against the same release**
-Admin processes run against the same codebase and config as the regular long-running processes — not a different version.
+Admin processes run against the same codebase and config as the regular long-running processes: not a different version.
 
 ```bash
 # Wrong: running a migration against a different version

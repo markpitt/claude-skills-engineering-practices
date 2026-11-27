@@ -1,6 +1,6 @@
 # Config and Backing Services
 
-Covers **Factor III: Config** and **Factor IV: Backing Services** — how twelve-factor apps manage environment-specific values and treat external services as interchangeable resources.
+Covers **Factor III: Config** and **Factor IV: Backing Services**. How twelve-factor apps manage environment-specific values and treat external services as interchangeable resources.
 
 ---
 
@@ -154,7 +154,7 @@ WORKERS=4
 
 > Treat backing services as attached resources.
 
-A **backing service** is any service the app consumes over the network. The app makes no distinction between a locally-managed service and a third-party service — both are attached resources, accessed via a URL or credentials stored in config (Factor III).
+A **backing service** is any service the app consumes over the network. The app makes no distinction between a locally-managed service and a third-party service: both are attached resources, accessed via a URL or credentials stored in config (Factor III).
 
 ### Categories of Backing Services
 
@@ -231,7 +231,7 @@ Backing services can be attached and detached at will. If a production database 
 1. Spin up a new database, restore from backup
 2. Update `DATABASE_URL` in the deployment config
 3. Restart the app processes
-4. Old database is detached — no code changes required
+4. Old database is detached: no code changes required
 
 This model also applies to degraded service handling: replacing a misbehaving Memcached instance is a config update, not a deployment.
 

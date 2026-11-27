@@ -6,7 +6,7 @@
 
 **Unnecessary complexity** is complication that doesn't serve a current requirement or solve a real problem.
 
-Understanding complexity sources is the first step toward simplification.
+Understanding complexity sources is the first step towards simplification.
 
 ## Types of Complexity
 
@@ -42,7 +42,7 @@ How much mental effort is required to understand what's happening.
 - Code that doesn't read like English
 - Business logic mixed with technical implementation
 - Non-obvious control flow
-- Implicit dependencies or behaviors
+- Implicit dependencies or behaviours
 
 **Example:**
 ```python
@@ -90,9 +90,9 @@ Complexity introduced by implementation choices, not by the problem itself.
 
 **Sources:**
 - Over-abstraction (too many interfaces/base classes)
-- Speculative generalization (building for use cases that don't exist)
+- Speculative generalisation (building for use cases that don't exist)
 - Framework overhead (using enterprise framework for simple task)
-- Premature optimization
+- Premature optimisation
 - Unnecessary patterns (Strategy pattern for 2 options, Visitor pattern for simple tree walk)
 
 **Example:**
@@ -180,7 +180,7 @@ Measures dependencies between modules.
 - Components can be modified independently
 - Easy to test in isolation
 - Components are reusable
-- Changes are localized
+- Changes are localised
 
 ### Depth of Nesting
 Measures how deeply conditionals or loops are nested.
@@ -234,8 +234,8 @@ Functions taking many parameters suggest they're doing too much.
 - Indicates function doing too much
 - Solution: Group related parameters into objects, simplify
 
-🚩 **Boolean trap** (function has different behavior based on boolean parameter)
-- Indicates multiple behaviors merged into one function
+🚩 **Boolean trap** (function has different behaviour based on boolean parameter)
+- Indicates multiple behaviours merged into one function
 - Solution: Split into separate functions
 
 ```python
@@ -266,10 +266,10 @@ process_standard(order)
 - "In the future, we could support..."
 - Solution: YAGNI (You Aren't Gonna Need It) principle
 
-🚩 **Premature optimization**: Optimizing before profiling
+🚩 **Premature optimisation**: Optimising before profiling
 - Complex algorithms for uncommon cases
 - Cache layers that aren't needed yet
-- Solution: Optimize only what measurements show is slow
+- Solution: Optimise only what measurements show is slow
 
 🚩 **Feature accumulation**: Adding features without removing old ones
 - Code paths for deprecated features still present
@@ -332,8 +332,8 @@ config = ConfigService().get_config()
 config = parse_config_file(config_file)
 ```
 
-### 2. Premature Optimization
-Optimizing before identifying performance problems.
+### 2. Premature Optimisation
+Optimising before identifying performance problems.
 
 **Problem:**
 ```python
@@ -369,7 +369,7 @@ Adding "nice-to-have" features that aren't requirements.
 
 **Solution:** Build the minimum viable product, add features only when explicitly requested.
 
-### 4. Speculative Generalization
+### 4. Speculative Generalisation
 Over-generalizing to support use cases that don't exist.
 
 **Problem:**
@@ -429,7 +429,7 @@ class Order:
    - No → Too complex
 
 2. **Change Test**: How hard is it to add a new feature or fix a bug?
-   - Easy (localized change) → Appropriately complex
+   - Easy (localised change) → Appropriately complex
    - Hard (changes needed everywhere) → Over-coupled, too complex
 
 3. **Knowledge Test**: How many people fully understand this component?
@@ -463,7 +463,7 @@ When you identify unnecessary complexity:
 - [ ] **Verify it's unnecessary**: Does functionality depend on this complexity? (Extract and test)
 - [ ] **Plan refactoring**: What's the simpler approach? (Sketch it out)
 - [ ] **Refactor incrementally**: Small, testable changes not massive rewrite
-- [ ] **Test thoroughly**: Ensure behavior is preserved
+- [ ] **Test thoroughly**: Make sure behaviour is preserved
 - [ ] **Measure improvement**: Track complexity metrics before/after
 - [ ] **Document decision**: Why was it simplified? (For future context)
 - [ ] **Share learning**: Teach team about pattern (prevent recurrence)
@@ -500,6 +500,6 @@ When you identify unnecessary complexity:
 2. **Classify**: Is this complexity essential or accidental?
 3. **Plan**: What's the simpler approach?
 4. **Refactor**: Use strategies from `simplification-strategies.md`
-5. **Validate**: Test that behavior is preserved
+5. **Validate**: Test that behaviour is preserved
 6. **Measure**: Document improvement in metrics
 7. **Learn**: Share what you learned with team

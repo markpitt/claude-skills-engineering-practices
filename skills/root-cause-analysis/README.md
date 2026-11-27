@@ -2,10 +2,10 @@
 
 # root-cause-analysis
 
-Structured root cause analysis using named methodologies: Toyota's 5 Whys, Ishikawa fishbone, Pareto analysis and fault tree analysis. Use when asked for "the root cause", "why does this keep happening", "5 whys", "a fishbone", "a post-mortem" or "an incident analysis"; when a problem has recurred after being fixed once already; or when a symptom has several candidate causes that need separating systematically. Applies across software, hardware, process failures and personal problems. Do NOT use for ordinary debugging where the cause is findable by reading the code or the logs. That is normal work, and a 5 Whys on a typo wastes everyone's time.
+Structured root cause analysis using named methods: Toyota's 5 Whys, Ishikawa fishbone, Pareto analysis, fault tree and barrier analysis. Use when asked for "the root cause", "why does this keep happening", "5 whys", "a fishbone", "a post-mortem" or "an incident analysis"; when a problem has come back after being fixed once already; or when a symptom has several candidate causes that need separating. Applies to software, hardware, process failures and practical problems such as missed deadlines or a habit that will not stick. Do NOT use for ordinary debugging where the cause can be found by reading the code or the logs, since a 5 Whys on a typo wastes everyone's time. Do NOT use for emotional, mental health or wellbeing support.
 
 - **Entry point:** [SKILL.md](SKILL.md)
-- **Version:** 2.1
+- **Version:** 3.0.0
 - **Licence:** Apache-2.0, see [LICENSE](LICENSE)
 
 ## Install
@@ -33,4 +33,4 @@ Loaded on demand, not up front. SKILL.md routes to them.
 ## Part of a larger set
 
 One of the Engineering practices skills (`claude-skills-engineering-practices`). See the [group's list](../../README.md),
-or every group in [claude-skills](https://github.com/markpitt/claude-skills).
+or every group in [claude-skills](https://markpitt.dev/claude-skills/).

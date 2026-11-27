@@ -3,43 +3,29 @@ name: tdd-guru
 description: Enforces current Test-Driven Development (TDD) best practices across programming languages and scripts, including red-green-refactor workflow, deterministic test design, test pyramid balance, and quality signals beyond coverage. Use when users ask about TDD workflow, test strategy, flaky test remediation, unit/integration/end-to-end balance, contract testing, or improving test effectiveness in CI. Do NOT use for unrelated non-testing prompts or language-only questions without testing intent.
 license: Apache-2.0
 metadata:
-  version: "1.0.0"
+  version: "2.0.0"
 ---
 
 # TDD Guru
 
-Enforce modern, evidence-grounded TDD practices for software and scripting work.
-Prioritise fast feedback, deterministic tests, behaviour-focused design, and
-clear delivery gates.
+Test-driven development done properly: fast feedback, deterministic tests, tests that describe behaviour, and clear gates in CI.
 
-## Critical
+## Rules, and why they hold
 
-- Ground “latest” or “best practice” claims with a web fetch tool (WebFetch in Claude Code) before finalising guidance.
-- Prefer official docs and primary references over secondary blog summaries.
-- If web evidence conflicts with existing memory, prefer current official docs and state that guidance changed.
-- Enforce the canonical TDD loop: **red → green → refactor**.
-- Keep recommendations behaviour-first: test externally observable behaviour and contracts, not private implementation details.
-- Treat flaky tests as a priority defect in the delivery system, not as acceptable noise.
-- For unrelated prompts, answer directly without injecting TDD process guidance.
+- **Red, green, refactor, in that order.** A test written after the code passes the first time it runs, so it has never been seen to fail and may not test anything. Writing it first proves it can catch the defect.
+- **Test behaviour, not implementation.** Tests tied to private methods break on every refactor and so discourage refactoring, which is the step TDD exists to make safe. Test the public interface and the contracts.
+- **A flaky test is a defect.** A test that fails at random teaches the team to ignore red builds, and then a real failure gets ignored too. Fix it, or quarantine it briefly with an owner and a date.
+- **Check current guidance before calling something "best practice".** Tooling moves faster than memory. When a claim depends on recency, fetch the official docs first and say so if the guidance has changed.
+- **Stay out of unrelated questions.** A prompt with no testing intent gets a direct answer, without TDD process bolted on.
 
-### Web Verification Order
+### Where to check
 
-When recency or best-practice claims matter, verify in this order:
+Start with these, and go to the tool's own docs for anything version-specific:
 
-1. `https://martinfowler.com/bliki/TestDrivenDevelopment.html`
-2. `https://martinfowler.com/bliki/TestPyramid.html`
-3. `https://abseil.io/resources/swe-book/html/ch11.html`
-4. `https://abseil.io/resources/swe-book/html/ch12.html`
-5. `https://martinfowler.com/articles/nonDeterminism.html`
-6. `https://testdesiderata.com/`
-7. `https://docs.pytest.org/en/stable/explanation/goodpractices.html`
-8. `https://docs.junit.org/current/user-guide/`
-9. `https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices`
-10. `https://vitest.dev/guide/`
-11. `https://playwright.dev/docs/best-practices`
-12. `https://docs.pact.io/`
-13. `https://stryker-mutator.io/docs/`
-14. `https://pitest.org/`
+- Martin Fowler on [TDD](https://martinfowler.com/bliki/TestDrivenDevelopment.html), the [test pyramid](https://martinfowler.com/bliki/TestPyramid.html) and [non-determinism](https://martinfowler.com/articles/nonDeterminism.html).
+- *Software Engineering at Google*, chapters [11](https://abseil.io/resources/swe-book/html/ch11.html) and [12](https://abseil.io/resources/swe-book/html/ch12.html).
+- [Test Desiderata](https://testdesiderata.com/) for the properties a good test has.
+- Framework docs: pytest, JUnit, the .NET testing guidance, Vitest, Playwright, Pact, Stryker and PIT. `references/web-verified-baseline.md` has the links.
 
 ## When to Use
 
@@ -56,9 +42,9 @@ When recency or best-practice claims matter, verify in this order:
 - Pure language syntax questions without testing intent.
 - Non-software quality topics where test strategy is irrelevant.
 
-## Enforcement Checklist
+## Checklist
 
-Apply this checklist to every TDD-related response.
+Work through this for any TDD answer; skip what does not apply.
 
 ### TDD Core Loop
 
@@ -84,7 +70,7 @@ Apply this checklist to every TDD-related response.
 ### Portfolio Shape
 
 - [ ] Recommend many fast lower-level tests and fewer high-level end-to-end tests.
-- [ ] Avoid “ice cream cone” test portfolios (too many broad UI/E2E tests).
+- [ ] Avoid "ice cream cone" test portfolios (too many broad UI/E2E tests).
 - [ ] Use integration tests at boundaries; use contract tests for service-to-service compatibility.
 
 ### Quality Signals Beyond Coverage
@@ -101,31 +87,12 @@ Apply this checklist to every TDD-related response.
 - [ ] Keep test feedback fast; prioritise earliest useful failure signals.
 - [ ] Keep release gating explicit and automated.
 
-## Intent-Specific Hard Requirements
+## Common questions, and what a good answer covers
 
-### Flaky Test Prompt
-
-For flaky-test prompts, include all of the following in guidance:
-
-- isolation/order-independence
-- time/randomness control
-- no bare sleep-based synchronisation
-- external dependency containment (fakes/stubs/contracts)
-
-### “How many E2E tests?” Prompt
-
-Must state that high-level E2E tests should be comparatively few and focused on
-critical user journeys, with most coverage at lower levels.
-
-### “Beyond Coverage” Prompt
-
-Must mention at least one mutation-testing approach and at least one
-property-based/invariant-testing approach.
-
-### Service Integration Prompt
-
-Must mention consumer/provider contract validation and explain why it reduces
-brittle, environment-heavy integration-only strategies.
+- **Flaky tests.** The usual causes are shared state between tests, uncontrolled time or randomness, sleeps used for synchronisation, and real external dependencies. A good answer works through all four, because a flaky test rarely has only one, and fixing the first one found often leaves the test flaky.
+- **How many end-to-end tests.** Few, aimed at the critical user journeys, with most coverage lower down. End-to-end tests are slow and fail for reasons unrelated to the change, so a portfolio built on them gives slow and noisy feedback.
+- **Going beyond coverage.** Coverage shows a line ran, not that anything checked the result. Mutation testing (Stryker, PIT, mutmut) measures whether the assertions would catch a change, and property-based testing (Hypothesis, fast-check, FsCheck) finds the inputs nobody thought to write down.
+- **Testing service integration.** Consumer-driven contract tests (Pact or similar) check that both sides agree on the interface without standing up every service. Integration-only strategies need whole environments, which are slow to build and break for reasons that have nothing to do with the change.
 
 ## Response Pattern
 
@@ -133,9 +100,9 @@ brittle, environment-heavy integration-only strategies.
 2. If recency-sensitive, verify claims with the web fetch tool first.
 3. Give concise, actionable guidance in ordered steps/checklist form.
 4. Include trade-offs (speed vs fidelity, isolation vs realism) explicitly.
-5. End with a short “next iteration” loop the user can run immediately.
+5. End with a short "next iteration" loop the user can run immediately.
 
-## Anti-Patterns (Instant Fail)
+## Never
 
 - Recommending test-after coding while calling it TDD.
 - Treating flaky tests as acceptable and advising retries-only as a permanent fix.

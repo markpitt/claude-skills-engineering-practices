@@ -44,7 +44,7 @@ Work through each factor systematically. For each: assess the current state, not
 - [ ] Build, release, and run stages are strictly separated
 - [ ] No code compilation, asset building, or dependency installation happens at runtime startup
 - [ ] Every release has a unique ID (commit SHA, timestamp, or version number)
-- [ ] Releases are immutable — once created, a release is not modified
+- [ ] Releases are immutable: once created, a release is not modified
 - [ ] Previous releases can be rolled back without a new build
 - [ ] No direct SSH-and-edit workflow on running production servers
 
@@ -223,22 +223,22 @@ Not all violations have equal urgency. Prioritise in this order:
 
 ### High Priority (Security and Reliability Risks)
 
-1. **Credentials in source code** (Factor III) — immediate security risk
-2. **No graceful shutdown** (Factor IX) — dropped requests on every deploy
-3. **Stateful processes** (Factor VI) — prevents scaling and causes data loss
+1. **Credentials in source code** (Factor III): immediate security risk
+2. **No graceful shutdown** (Factor IX): dropped requests on every deploy
+3. **Stateful processes** (Factor VI): prevents scaling and causes data loss
 
 ### Medium Priority (Scalability and Maintainability)
 
-4. **No lockfile committed** (Factor II) — non-reproducible builds
-5. **Migrations at startup** (Factor XII) — causes downtime on scale-out
-6. **Log files managed by app** (Factor XI) — lost logs, disk fill-up risk
-7. **Different services in dev vs. prod** (Factor X) — "works on my machine" bugs
+4. **No lockfile committed** (Factor II): non-reproducible builds
+5. **Migrations at startup** (Factor XII): causes downtime on scale-out
+6. **Log files managed by app** (Factor XI): lost logs, disk fill-up risk
+7. **Different services in dev vs. prod** (Factor X): "works on my machine" bugs
 
 ### Lower Priority (Operational Improvements)
 
-8. **No Procfile / process formation** (Factor VIII) — limits platform portability
-9. **Build/release not separated** (Factor V) — slower deploys, no rollback
-10. **Hardcoded hostnames** (Factor IV) — fragile but usually working
+8. **No Procfile / process formation** (Factor VIII): limits platform portability
+9. **Build/release not separated** (Factor V): slower deploys, no rollback
+10. **Hardcoded hostnames** (Factor IV): fragile but usually working
 
 ---
 

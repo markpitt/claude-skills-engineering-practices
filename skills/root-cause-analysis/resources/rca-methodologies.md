@@ -1,4 +1,4 @@
-# RCA Methodologies: Comprehensive Guide
+# RCA Methodologies: Full Guide
 
 This resource covers the five core root cause analysis methodologies with step-by-step guidance, when to use each, and practical examples.
 
@@ -63,7 +63,7 @@ Solution: Add DB query analysis to CI/CD pipeline and review checklist
 
 ## 2. Fishbone Diagram (Ishikawa)
 
-Created by Kaoru Ishikawa, this visual tool organizes potential causes into categories for comprehensive systematic analysis.
+Created by Kaoru Ishikawa, this visual tool organises potential causes into categories for full systematic analysis.
 
 ### Structure
 
@@ -81,7 +81,7 @@ Created by Kaoru Ishikawa, this visual tool organizes potential causes into cate
 ### The 6 M's Categories
 
 - **Manpower/People**: Skills, training, staffing, communication, procedures
-- **Methods/Process**: Workflows, documentation, standardization, procedures
+- **Methods/Process**: Workflows, documentation, standardisation, procedures
 - **Machines/Equipment**: Tools, hardware, software systems, infrastructure
 - **Materials/Inputs**: Components, supplies, dependencies, data quality
 - **Measurements/Monitoring**: Metrics, monitoring, detection, feedback systems
@@ -139,7 +139,7 @@ Created by Kaoru Ishikawa, this visual tool organizes potential causes into cate
 ### Advantages
 
 - Visual representation helps team communication
-- Ensures comprehensive exploration
+- Makes sure full exploration
 - Good for cross-functional analysis
 - Helps identify contributing vs. root causes
 - Tracks multiple cause paths
@@ -154,7 +154,7 @@ Created by Kaoru Ishikawa, this visual tool organizes potential causes into cate
 
 ## 3. Pareto Analysis (80/20 Rule)
 
-Prioritize problems by identifying which causes contribute most to the effect.
+Prioritise problems by identifying which causes contribute most to the effect.
 
 ### Principle
 
@@ -172,9 +172,9 @@ Typically, 20% of causes account for 80% of problems. Focus resources on the vit
 ### When to Use
 
 - Multiple problems competing for attention
-- Need to prioritize limited resources
+- Need to prioritise limited resources
 - Data-driven decision required
-- Want to maximize impact of corrective actions
+- Want to maximise impact of corrective actions
 - Resource constraints necessitate triage
 
 ### Example: Software Bugs by Category
@@ -203,7 +203,7 @@ Focus on input validation and error handling (70% of issues)
 
 ## 4. Fault Tree Analysis (FTA)
 
-Top-down deductive approach using Boolean logic to analyze failure modes, primarily for safety-critical and high-stakes systems.
+Top-down deductive approach using Boolean logic to analyse failure modes, primarily for safety-critical and high-stakes systems.
 
 ### When to Use
 
@@ -261,7 +261,7 @@ Top-down deductive approach using Boolean logic to analyze failure modes, primar
 ### Disadvantages
 
 - Complex and time-consuming
-- Requires specialized knowledge
+- Requires specialised knowledge
 - Can become very large
 - Best with quantitative failure data
 - Not suitable for quick analysis
@@ -302,7 +302,7 @@ Examines what controls or barriers failed to prevent or detect the problem.
    - Did it function? (Yes/No/Partially)
    - Why did it fail? (If applicable)
 3. Identify gaps (missing barriers)
-4. Analyze barrier interactions
+4. Analyse barrier interactions
 5. Develop improvements
 
 ### When to Use
@@ -347,7 +347,7 @@ Create clear problem statement with What/Where/When/Impact:
 
 ### Phase 2: Gather Evidence
 
-Follow "Go and See" principle—collect facts, not opinions:
+Follow "Go and See" principle: collect facts, not opinions:
 - Logs, metrics, monitoring data
 - Timeline of events and changes
 - Recent system/code/configuration changes
@@ -401,7 +401,7 @@ Address root cause with:
 
 ❌ **"It just broke"** → What caused failure? Why now?
 
-❌ **"Not enough time"** → Why insufficient? What prioritization led to this?
+❌ **"Not enough time"** → Why insufficient? What prioritisation led to this?
 
 ❌ **"Lack of communication"** → What process/tool failure enabled miscommunication?
 
@@ -418,8 +418,8 @@ Keep digging until you reach a controllable, actionable cause.
 | Problem Characteristics | Recommended Methodology | Reason |
 |---|---|---|
 | Single clear failure, obvious initial cause | 5 Whys | Fast, focused, iterative |
-| Complex, multiple possible causes | Fishbone → 5 Whys | Comprehensive exploration then deep dive |
-| Multiple issues, need prioritization | Pareto → 5 Whys | Identify vital few then analyze |
+| Complex, multiple possible causes | Fishbone → 5 Whys | Full exploration then deep dive |
+| Multiple issues, need prioritisation | Pareto → 5 Whys | Identify vital few then analyse |
 | Safety-critical, high-stakes | Fault Tree | Rigorous, formal, probabilistic |
 | Process breakdown, control failure | Barrier Analysis | Identifies specific control gaps |
 | Unknown cause, system exploration | Fishbone | Structured exploration |
@@ -558,7 +558,7 @@ NEXT STEPS:
 ### Do's ✓
 
 - Base analysis on facts and evidence, not assumptions
-- Use "Go and See"—observe directly
+- Use "Go and See": observe directly
 - Focus on process/system failures, not blame
 - Document each step and reasoning
 - Verify root causes before implementing solutions
@@ -573,7 +573,7 @@ NEXT STEPS:
 - Stop at symptoms or proximate causes
 - Accept "human error" as root cause
 - Skip evidence gathering
-- Blame individuals—fix systems
+- Blame individuals: fix systems
 - Implement solutions without verification
 - Rush to solutions before understanding
 - Ignore contradictory evidence
